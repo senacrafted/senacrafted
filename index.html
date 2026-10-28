@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sena Crafted</title>
+  <link rel="icon" href="images/logo.png">
+  <meta name="description" content="Nature paintings and handmade leather crafts by Sena Gazioglu, made in Georgia.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="nav">
+    <a href="#top" class="brand"><img src="images/logo.png" alt=""><span data-site="name"></span></a>
+    <nav>
+      <a href="#work">Work</a>
+      <a href="#custom">Custom</a>
+      <a href="#events">Find me</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <img class="hero-logo" src="images/logo.png" alt="">
+      <p class="eyebrow">Paintings · Leather · Georgia</p>
+      <h1 data-site="name"></h1>
+      <p class="tagline" data-site="tagline"></p>
+      <div class="hero-actions">
+        <a href="#work" class="btn">See the work</a>
+        <a href="#events" class="btn ghost">Where I'll be next</a>
+      </div>
+    </section>
+
+    <section id="work" class="section">
+      <div class="section-head">
+        <h2>The work</h2>
+        <div class="filters" role="tablist">
+          <button class="filter active" data-filter="all">All</button>
+          <button class="filter" data-filter="leather">Leather</button>
+          <button class="filter" data-filter="painting">Paintings & prints</button>
+        </div>
+      </div>
+      <div id="gallery" class="gallery"></div>
+    </section>
+
+    <section id="custom" class="section band">
+      <div class="band-inner">
+        <h2>Custom orders</h2>
+        <p>Want a journal cover with your favorite flower, a leather patch for your jacket, or a painting of a place you love? Tell me what you have in mind and I'll send back a quote and timeline.</p>
+        <a class="btn" id="custom-btn" href="#">Start a custom order</a>
+      </div>
+    </section>
+
+    <section id="events" class="section">
+      <h2>Find me at a festival</h2>
+      <p class="muted">Come see the work in person — everything looks better off a screen.</p>
+      <ul id="event-list" class="events"></ul>
+    </section>
+
+    <section id="about" class="section about">
+      <h2>About</h2>
+      <p data-site="about"></p>
+    </section>
+
+    <section id="contact" class="section contact">
+      <h2>Say hello</h2>
+      <p class="muted">Questions, commissions, or wholesale — I read every message.</p>
+      <div class="contact-links">
+        <a class="btn" id="email-link" href="#"></a>
+        <a class="btn ghost" id="ig-link" href="#" target="_blank" rel="noopener"></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>© <span id="year"></span> <span data-site="name"></span> · <span data-site="location"></span></span>
+  </footer>
+
+  <dialog id="lightbox">
+    <button class="close" aria-label="Close">×</button>
+    <div class="lb-media"></div>
+    <div class="lb-body"></div>
+  </dialog>
+
+  <script src="works.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
