@@ -4,14 +4,17 @@ const $ = (sel) => document.querySelector(sel);
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 
 const money = (n) => "$" + (Number.isInteger(n) ? n : n.toFixed(2));
+const hasPrice = (w) => typeof w.price === "number" && w.price > 0;
 
 const mailto = (subject, body = "") =>
   `mailto:${SITE.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
-function media(work) {
-  if (work.image) return `<img src="${esc(work.image)}" alt="${esc(work.title)}" loading="lazy">`;
-  const label = work.category === "leather" ? "Leather" : "Painting";
-  return `<div class="placeholder ${work.category}"><div>${esc(work.title)}<small>${label} · photo coming</small></div></div>`;
+// Older entries may use a single `image` instead of `photos`
+const photosOf = (w) => (w.photos?.length ? w.photos : w.image ? [w.image] : []);
+
+function placeholder(work) {
+  const label = work.category === "leather" ? "Leather" : "Paper goods";
+  return `<div class="placeholder"><div>${esc(work.title)}<small>${label} · photo coming</small></div></div>`;
 }
 
 function action(work) {
@@ -27,31 +30,59 @@ function badge(work) {
   return "";
 }
 
+function priceTag(w) {
+  if (!hasPrice(w)) return "<span></span>";
+  return `<span class="price">${money(w.price)}${w.status === "custom" ? "+" : ""}</span>`;
+}
+
 function renderGallery(filter = "all") {
   const items = WORKS.map((w, i) => ({ ...w, i })).filter((w) => filter === "all" || w.category === filter);
-  $("#gallery").innerHTML = items.map((w) => `
+  $("#gallery").innerHTML = items.map((w) => {
+    const photos = photosOf(w);
+    const media = photos.length
+      ? `<img src="${esc(photos[0])}" alt="${esc(w.title)}" loading="lazy">` +
+        (photos[1] ? `<img class="alt" src="${esc(photos[1])}" alt="" loading="lazy">` : "") +
+        (photos.length > 1 ? `<span class="count">${photos.length} photos</span>` : "")
+      : placeholder(w);
+    return `
     <article class="card ${w.status === "sold" ? "is-sold" : ""}">
-      <div class="media" data-i="${w.i}">${media(w)}${badge(w)}</div>
+      <div class="media" data-i="${w.i}" role="button" tabindex="0" aria-label="See photos of ${esc(w.title)}">${media}${badge(w)}</div>
       <div class="info">
         <h3>${esc(w.title)}</h3>
         <p class="desc">${esc(w.description)}</p>
-        <div class="row">
-          <span class="price">${w.price ? money(w.price) : ""}${w.status === "custom" ? "+" : ""}</span>
-          ${action(w)}
-        </div>
+        <div class="row">${priceTag(w)}${action(w)}</div>
       </div>
-    </article>`).join("");
+    </article>`;
+  }).join("");
+}
+
+// ── Lightbox with photo carousel ──
+let current = { work: null, photo: 0 };
+
+function showPhoto(n) {
+  const photos = photosOf(current.work);
+  if (!photos.length) return;
+  current.photo = (n + photos.length) % photos.length;
+  $("#lightbox .lb-frame").innerHTML = `<img src="${esc(photos[current.photo])}" alt="${esc(current.work.title)}, photo ${current.photo + 1} of ${photos.length}">`;
+  document.querySelectorAll("#lightbox .lb-thumbs button").forEach((b, i) => b.classList.toggle("on", i === current.photo));
 }
 
 function openLightbox(i) {
   const w = WORKS[i];
+  const photos = photosOf(w);
   const box = $("#lightbox");
-  box.querySelector(".lb-media").innerHTML = media(w);
+  current = { work: w, photo: 0 };
+  box.querySelector(".lb-frame").innerHTML = photos.length ? "" : placeholder(w);
+  box.querySelectorAll(".lb-nav").forEach((b) => (b.hidden = photos.length < 2));
+  box.querySelector(".lb-thumbs").innerHTML = photos.length > 1
+    ? photos.map((p, n) => `<button data-n="${n}" aria-label="Photo ${n + 1}"><img src="${esc(p)}" alt=""></button>`).join("")
+    : "";
   box.querySelector(".lb-body").innerHTML = `
     <h3>${esc(w.title)}</h3>
     <p class="muted">${esc(w.description)}</p>
-    <p><strong>${w.status === "sold" ? "Sold" : w.price ? money(w.price) : ""}</strong></p>
+    ${w.status === "sold" ? `<span class="price">Sold</span>` : hasPrice(w) ? priceTag(w) : `<p></p>`}
     ${action(w)}`;
+  showPhoto(0);
   box.showModal();
 }
 
@@ -64,6 +95,30 @@ function renderEvents() {
         ${e.link ? `<a class="btn small ghost" href="${esc(e.link)}" target="_blank" rel="noopener">Details</a>` : ""}
       </li>`).join("")
     : `<li class="empty"><span class="muted">Festival dates to be determined — follow along on Instagram or email me to hear first.</span></li>`;
+}
+
+// ── Wavy frame around the custom-orders box ──
+// Redrawn whenever the box changes size so the waves stay evenly spaced.
+function drawWavy(el) {
+  const { width: w, height: h } = el.getBoundingClientRect();
+  const amp = 7, wave = 38, inset = amp + 7;
+  const pts = [];
+  const edge = (x0, y0, x1, y1, nx, ny) => {
+    const len = Math.hypot(x1 - x0, y1 - y0);
+    const k = Math.max(2, Math.round(len / wave)) ;
+    for (let s = 0; s < len; s += 3) {
+      const t = s / len, off = amp * Math.sin(Math.PI * k * t);
+      pts.push([x0 + (x1 - x0) * t + nx * off, y0 + (y1 - y0) * t + ny * off]);
+    }
+  };
+  const L = inset, T = inset, R = w - inset, B = h - inset;
+  edge(L, T, R, T, 0, -1);
+  edge(R, T, R, B, 1, 0);
+  edge(R, B, L, B, 0, 1);
+  edge(L, B, L, T, -1, 0);
+  const d = "M" + pts.map(([x, y]) => `${x.toFixed(1)} ${y.toFixed(1)}`).join("L") + "Z";
+  el.querySelector(".wave").innerHTML =
+    `<path d="${d}" fill="var(--olive-soft)" stroke="var(--red)" stroke-width="13" stroke-linejoin="round" filter="url(#painted)"/>`;
 }
 
 // Fill in site-wide text
@@ -94,8 +149,26 @@ $("#gallery").addEventListener("click", (e) => {
   const m = e.target.closest(".media");
   if (m) openLightbox(+m.dataset.i);
 });
+$("#gallery").addEventListener("keydown", (e) => {
+  const m = e.target.closest(".media");
+  if (m && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); openLightbox(+m.dataset.i); }
+});
 $("#lightbox .close").addEventListener("click", () => $("#lightbox").close());
 $("#lightbox").addEventListener("click", (e) => { if (e.target.id === "lightbox") e.target.close(); });
+$("#lightbox .prev").addEventListener("click", () => showPhoto(current.photo - 1));
+$("#lightbox .next").addEventListener("click", () => showPhoto(current.photo + 1));
+$("#lightbox .lb-thumbs").addEventListener("click", (e) => {
+  const b = e.target.closest("button");
+  if (b) showPhoto(+b.dataset.n);
+});
+$("#lightbox").addEventListener("keydown", (e) => {
+  if (e.key === "ArrowLeft") showPhoto(current.photo - 1);
+  if (e.key === "ArrowRight") showPhoto(current.photo + 1);
+});
+
+const wavy = $(".wavy");
+wavy.insertAdjacentHTML("afterbegin", `<svg class="wave" aria-hidden="true"></svg>`);
+new ResizeObserver(() => drawWavy(wavy)).observe(wavy);
 
 renderGallery();
 renderEvents();

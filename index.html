@@ -6,16 +6,30 @@
   <title>Sena Crafted</title>
   <link rel="icon" href="images/logo.png">
   <meta name="description" content="Nature paintings and handmade leather crafts by Sena Gazioglu, made in Georgia.">
+  <meta property="og:title" content="Sena Crafted">
+  <meta property="og:description" content="Nature paintings and handmade leather crafts by Sena Gazioglu, made in Georgia.">
+  <meta property="og:image" content="https://senacrafted.com/images/swan-cover-1.jpg">
+  <link rel="preload" href="fonts/SenaHandwriting-Regular.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- Hand-painted wobble for stripes and frames -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <filter id="painted">
+      <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="3"/>
+      <feDisplacementMap in="SourceGraphic" scale="6"/>
+    </filter>
+  </svg>
+
+  <div class="announce" data-site="announcement"></div>
+
   <header class="nav">
     <a href="#top" class="brand"><img src="images/logo.png" alt=""><span data-site="name"></span></a>
     <nav>
-      <a href="#work">Work</a>
+      <a href="#work">Shop</a>
       <a href="#custom">Custom</a>
       <a href="#events">Find me</a>
       <a href="#about">About</a>
@@ -24,65 +38,93 @@
   </header>
 
   <main id="top">
-    <section class="hero">
-      <img class="hero-logo" src="images/logo.png" alt="">
-      <p class="eyebrow">Paintings · Leather · Georgia</p>
-      <h1 data-site="name"></h1>
-      <p class="tagline" data-site="tagline"></p>
-      <div class="hero-actions">
-        <a href="#work" class="btn">See the work</a>
-        <a href="#events" class="btn ghost">Where I'll be next</a>
+    <section class="hero stripes">
+      <img class="doodle sun" src="images/doodles/sun.svg" alt="">
+      <img class="doodle cloud" src="images/doodles/cloud.svg" alt="">
+      <img class="doodle bird" src="images/doodles/bird.svg" alt="">
+
+      <div class="hero-card">
+        <img class="hero-logo" src="images/logo.png" alt="">
+        <h1 data-site="name"></h1>
+        <p class="tagline" data-site="tagline"></p>
+        <div class="hero-actions">
+          <a href="#work" class="btn">Shop the work</a>
+          <a href="#events" class="btn ghost">Where I'll be next</a>
+        </div>
+      </div>
+
+      <div class="snapshots" aria-hidden="true">
+        <a href="#work" class="snap"><img src="images/swan-cover-1.jpg" alt=""><span>swan cover</span></a>
+        <a href="#work" class="snap"><img src="images/crow-keychain-2.jpg" alt=""><span>little crows</span></a>
+        <a href="#work" class="snap"><img src="images/willow-postcard-1.jpg" alt=""><span>willow postcard</span></a>
       </div>
     </section>
 
     <section id="work" class="section">
       <div class="section-head">
-        <h2>The work</h2>
+        <h2><i class="spark"></i>The work</h2>
         <div class="filters" role="tablist">
           <button class="filter active" data-filter="all">All</button>
           <button class="filter" data-filter="leather">Leather</button>
-          <button class="filter" data-filter="painting">Paintings & prints</button>
+          <button class="filter" data-filter="paper">Paintings &amp; paper</button>
         </div>
       </div>
       <div id="gallery" class="gallery"></div>
     </section>
 
-    <section id="custom" class="section band">
-      <div class="band-inner">
+    <section id="custom" class="gingham">
+      <div class="wavy">
+        <img class="doodle needle" src="images/doodles/needle.svg" alt="">
         <h2>Custom orders</h2>
         <p>Want a journal cover with your favorite flower, a leather patch for your jacket, or a painting of a place you love? Tell me what you have in mind and I'll send back a quote and timeline.</p>
         <a class="btn" id="custom-btn" href="#">Start a custom order</a>
       </div>
     </section>
 
-    <section id="events" class="section">
+    <section id="about" class="section about">
+      <div class="about-photos">
+        <figure class="snap tilt-l"><img src="images/bts-workbench.jpg" alt="Sena's workbench with leather, tools, and a cutting mat"><figcaption>my workbench</figcaption></figure>
+        <figure class="snap tilt-r"><img src="images/bts-crow-eyes.jpg" alt="Leather crow eyes cut out and waiting to be stitched"><figcaption>crow eyes in progress</figcaption></figure>
+      </div>
+      <div class="about-text">
+        <h2><i class="spark"></i>Hi, I'm Sena</h2>
+        <p data-site="about"></p>
+      </div>
+    </section>
+
+    <section id="events" class="section events-section">
+      <img class="doodle stall" src="images/doodles/stall.svg" alt="">
       <h2>Find me at a festival</h2>
       <p class="muted">Come see the work in person — everything looks better off a screen.</p>
       <ul id="event-list" class="events"></ul>
     </section>
 
-    <section id="about" class="section about">
-      <h2>About</h2>
-      <p data-site="about"></p>
-    </section>
-
-    <section id="contact" class="section contact">
-      <h2>Say hello</h2>
-      <p class="muted">Questions, commissions, or wholesale — I read every message.</p>
-      <div class="contact-links">
-        <a class="btn" id="email-link" href="#"></a>
-        <a class="btn ghost" id="ig-link" href="#" target="_blank" rel="noopener"></a>
+    <section id="contact" class="contact stripes olive">
+      <div class="contact-card">
+        <img class="doodle envelope" src="images/doodles/envelope.svg" alt="">
+        <h2>Say hello</h2>
+        <p class="muted">Questions, commissions, or wholesale — I read every message.</p>
+        <div class="contact-links">
+          <a class="btn" id="email-link" href="#"></a>
+          <a class="btn ghost" id="ig-link" href="#" target="_blank" rel="noopener"></a>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="footer">
+    <div class="spark-row" aria-hidden="true"><i class="spark"></i><i class="spark"></i><i class="spark"></i></div>
     <span>© <span id="year"></span> <span data-site="name"></span> · <span data-site="location"></span></span>
   </footer>
 
   <dialog id="lightbox">
     <button class="close" aria-label="Close">×</button>
-    <div class="lb-media"></div>
+    <div class="lb-media">
+      <button class="lb-nav prev" aria-label="Previous photo">‹</button>
+      <div class="lb-frame"></div>
+      <button class="lb-nav next" aria-label="Next photo">›</button>
+    </div>
+    <div class="lb-thumbs"></div>
     <div class="lb-body"></div>
   </dialog>
 
