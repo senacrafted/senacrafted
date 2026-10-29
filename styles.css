@@ -5,19 +5,19 @@
 }
 
 :root {
-  /* palette */
-  --cream: #fbf1dc;
-  --paper: #fefaf0;
-  --ink: #542916;          /* espresso */
-  --muted: #7a5a48;
-  --red: #b23a1f;          /* terre cuite */
-  --red-dark: #8f2c15;
-  --blue: #88b8ce;         /* bleu porcelaine */
-  --olive: #b79858;        /* eau trouble */
-  --olive-soft: #ddd6a6;
-  --beige: #f4edc8;        /* custom-orders box */
-  --honey: #f1c166;        /* miel doré */
-  --line: rgba(84, 41, 22, .14);
+  /* palette — buttery cream, chocolate, powder blue, khaki, tomato */
+  --cream: #fbeece;        /* butter cream page */
+  --paper: #fdf4dc;        /* cards, nav */
+  --ink: #4a2a1a;          /* chocolate */
+  --muted: #7b6150;
+  --red: #b9361f;          /* tomato */
+  --red-dark: #962a16;
+  --blue: #b7d2dc;         /* powder blue */
+  --olive: #a99c6c;        /* khaki */
+  --olive-soft: #e3dcbc;
+  --beige: #fcf0d2;        /* custom-orders box */
+  --honey: #f1c166;
+  --line: rgba(74, 42, 26, .14);
 
   --hand: "Sena Handwriting", "Figtree", system-ui, sans-serif;
   --sans: "Figtree", system-ui, sans-serif;
@@ -75,7 +75,7 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.2rem); color: var(--red); }
   background:
     radial-gradient(circle at 11px 0, var(--red) 10.5px, transparent 11.5px) 0 0 / 44px 18px repeat-x,
     radial-gradient(circle at 11px 0, var(--paper) 10.5px, transparent 11.5px) 22px 0 / 44px 18px repeat-x;
-  filter: drop-shadow(0 2px 0 rgba(84, 41, 22, .12));
+  filter: drop-shadow(0 2px 0 rgba(74, 42, 26, .12));
 }
 .brand { font-family: var(--hand); font-size: 1.7rem; line-height: 1.2; color: var(--red); text-decoration: none; white-space: nowrap; }
 .nav nav { display: flex; gap: 1.6rem; }
@@ -97,7 +97,8 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.2rem); color: var(--red); }
 .btn.small { padding: .45rem .95rem; font-size: .85rem; }
 
 /* ── Sena's painted stripes ────────────────────────────────── */
-.stripes { background: var(--blue) url("images/stripes.jpg?v=202610291736") center / cover; }
+.stripes { background: var(--blue) url("images/stripes.jpg?v=202610291741") center / cover; }
+.stripes.khaki { background-image: url("images/stripes-olive.jpg?v=202610291741"); }
 
 /* ── Hero ──────────────────────────────────────────────────── */
 /* fills the first screen under the header, logo dead centre */
@@ -120,7 +121,7 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.2rem); color: var(--red); }
   border: none; background: transparent; color: var(--red); box-shadow: inset 0 0 0 2px var(--red);
   padding: .45rem 1.05rem; border-radius: 999px; cursor: pointer; font: 600 .88rem var(--sans);
 }
-.filter:hover { background: rgba(178, 58, 31, .08); }
+.filter:hover { background: rgba(185, 54, 31, .08); }
 .filter.active { background: var(--red); color: var(--paper); }
 
 /* ── Gallery ───────────────────────────────────────────────── */
@@ -150,7 +151,7 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.2rem); color: var(--red); }
 .badge.sold { background: var(--ink); color: var(--paper); }
 .count {
   position: absolute; bottom: .7rem; right: .7rem; z-index: 1;
-  background: rgba(254, 250, 240, .92); color: var(--ink);
+  background: rgba(253, 244, 220, .92); color: var(--ink);
   font-size: .72rem; font-weight: 700; padding: .15rem .55rem; border-radius: 999px;
 }
 .card .info { padding: .9rem .2rem 0; display: flex; flex-direction: column; gap: .3rem; flex: 1; }
@@ -163,7 +164,7 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.2rem); color: var(--red); }
 /* ── Custom orders: gingham + wavy frame ───────────────────── */
 .gingham {
   padding: clamp(64px, 9vw, 112px) var(--gutter);
-  background: var(--blue) url("images/gingham.jpg?v=202610291736") center / cover;
+  background: var(--blue) url("images/gingham.jpg?v=202610291741") center / cover;
   overflow: hidden;
 }
 .wavy {
@@ -238,8 +239,8 @@ dialog#lightbox {
   overflow: auto;
 }
 dialog#lightbox[open] { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); grid-template-rows: auto 1fr; }
-dialog#lightbox::backdrop { background: rgba(43, 22, 12, .72); }
-.lb-media { position: relative; grid-row: 1 / span 2; background: #2b1d16; min-height: 320px; }
+dialog#lightbox::backdrop { background: rgba(46, 26, 16, .72); }
+.lb-media { position: relative; grid-row: 1 / span 2; background: #2e1a10; min-height: 320px; }
 .lb-frame { height: 100%; display: grid; place-items: center; }
 .lb-frame img { width: 100%; height: 100%; max-height: calc(100dvh - 28px); object-fit: contain; }
 .lb-frame .placeholder { position: static; min-height: 320px; color: var(--paper); }
