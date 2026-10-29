@@ -132,12 +132,11 @@ document.title = `${SITE.name} — Nature Paintings & Leather Crafts`;
 $("#year").textContent = new Date().getFullYear();
 $("#email-link").href = mailto("Hello!");
 $("#email-link").textContent = "Email me";
-if (SITE.instagram) {
-  $("#ig-link").href = `https://instagram.com/${SITE.instagram}`;
-  $("#ig-link").textContent = `@${SITE.instagram}`;
-} else {
-  $("#ig-link").remove();
-}
+$("#about-copy").innerHTML = [].concat(SITE.about).map((p) => `<p>${esc(p)}</p>`).join("");
+if (SITE.instagram) $("#ig-link").href = `https://www.instagram.com/${SITE.instagram}/`;
+else $("#ig-link").remove();
+if (SITE.tiktok) $("#tiktok-link").href = `https://www.tiktok.com/@${SITE.tiktok}`;
+else $("#tiktok-link").remove();
 if (SITE.etsy) $("#etsy-link").href = SITE.etsy;
 else $("#etsy-link").remove();
 $("#custom-btn").href = mailto(

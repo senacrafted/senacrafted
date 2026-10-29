@@ -18,11 +18,17 @@ const SITE = {
   tagline: "Nature paintings and handmade leather crafts — made with warmth, nostalgia, and a little bit of magic.",
   announcement: "Handmade in Georgia · Custom orders open",   // thin bar at the very top — leave "" to hide
   email: "senacrafted@gmail.com",
-  instagram: "senagazioglu",          // without the @ — leave "" to hide the button
+  instagram: "senacrafted",           // without the @ — leave "" to hide the button
+  tiktok: "senacrafted",              // without the @ — leave "" to hide the button
   etsy: "https://www.etsy.com/shop/SenaCrafted",   // leave "" to hide the button
   location: "Georgia, USA",
-  about:
-    "Hi, I'm Sena Gazioglu. I paint the natural world — willows, gardens, and the little animals that live in them — and I make leather goods by hand: journal covers, card holders, and patches cut, stitched, and painted one at a time. My work draws on childhood memories, nature, and everyday life, so no two pieces are exactly alike. You'll find me at festivals and markets around Georgia — come say hi, or reach out for a custom piece.",
+  // each "..." is its own paragraph
+  about: [
+    "Ever since I was a kid, I've loved creating with my hands. Growing up in Turkey, I knew I wanted to pursue my passion for art, so I came to the USA and studied Computer Animation! It taught me the professional pipeline and digital art, and now I channel what I've learned into leatherworking, painting, and drawing.",
+    "My work draws on childhood memories, nature, and everyday life, so no two pieces are exactly alike. You'll find me at festivals and markets around Georgia — if you see me, come say hi, or reach out for a custom piece!",
+  ],
+  custom: "I'm open to custom orders, so please reach out if you're thinking of something specific! Whether it's something I've made before or something unique, I'd be more than happy to bring your vision to life.",
+  hello: "Questions, comments, or just want to reach out? Shoot me a message!",
 };
 
 const WORKS = [

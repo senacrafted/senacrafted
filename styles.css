@@ -97,8 +97,8 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.2rem); color: var(--red); }
 .btn.small { padding: .45rem .95rem; font-size: .85rem; }
 
 /* ── Sena's painted stripes ────────────────────────────────── */
-.stripes { background: var(--blue) url("images/stripes.jpg?v=202610291934") center / cover; }
-.stripes.khaki { background-image: url("images/stripes-olive.jpg?v=202610291934"); }
+.stripes { background: var(--blue) url("images/stripes.jpg?v=202610291949") center / cover; }
+.stripes.khaki { background-image: url("images/stripes-olive.jpg?v=202610291949"); }
 
 /* ── Hero ──────────────────────────────────────────────────── */
 /* fills the first screen under the header, logo dead centre */
@@ -164,7 +164,7 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.2rem); color: var(--red); }
 /* ── Custom orders: gingham + wavy frame ───────────────────── */
 .gingham {
   padding: clamp(64px, 9vw, 112px) var(--gutter);
-  background: var(--blue) url("images/gingham.jpg?v=202610291934") center / cover;
+  background: var(--blue) url("images/gingham.jpg?v=202610291949") center / cover;
   overflow: hidden;
 }
 .wavy {
