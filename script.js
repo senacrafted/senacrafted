@@ -166,6 +166,12 @@ $("#lightbox").addEventListener("keydown", (e) => {
   if (e.key === "ArrowRight") showPhoto(current.photo + 1);
 });
 
+// Let the hero fill exactly the first screen below the header
+const setHead = () => document.documentElement.style.setProperty(
+  "--head", `${($(".announce")?.offsetHeight || 0) + $(".nav").offsetHeight}px`);
+setHead();
+addEventListener("resize", setHead);
+
 const wavy = $(".wavy");
 wavy.insertAdjacentHTML("afterbegin", `<svg class="wave" aria-hidden="true"></svg>`);
 new ResizeObserver(() => drawWavy(wavy)).observe(wavy);

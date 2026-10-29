@@ -65,7 +65,7 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.2rem); color: var(--red); }
 .nav {
   position: sticky; top: 0; z-index: 20;
   display: flex; align-items: center; justify-content: space-between; gap: 1rem;
-  padding: .7rem var(--gutter) .6rem;
+  padding: .55rem var(--gutter) .45rem;
   background: var(--paper);
 }
 /* scalloped awning hanging under the nav */
@@ -76,9 +76,7 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.2rem); color: var(--red); }
     radial-gradient(circle at 11px 0, var(--paper) 10.5px, transparent 11.5px) 22px 0 / 44px 18px repeat-x;
   filter: drop-shadow(0 2px 0 rgba(84, 41, 22, .12));
 }
-/* name arched over the cat logo */
-.brand { display: block; width: 104px; }
-.brand img { width: 100%; height: auto; }
+.brand { font-family: var(--hand); font-size: 1.7rem; line-height: 1.2; color: var(--red); text-decoration: none; white-space: nowrap; }
 .nav nav { display: flex; gap: 1.6rem; }
 .nav nav a { text-decoration: none; font-weight: 600; font-size: .95rem; white-space: nowrap; }
 .nav nav a:hover { color: var(--red); }
@@ -87,35 +85,29 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.2rem); color: var(--red); }
 .btn {
   display: inline-block; cursor: pointer;
   padding: .7rem 1.3rem;
-  border: 2px solid var(--ink); border-radius: 12px;
+  border: none; border-radius: 999px;
   background: var(--red); color: var(--paper);
   font: 600 .95rem var(--sans); text-decoration: none;
-  box-shadow: 3px 3px 0 var(--ink);
-  transition: transform .12s, box-shadow .12s, background .12s;
+  transition: background .15s, color .15s;
 }
-.btn:hover { transform: translate(-1px, -1px); box-shadow: 4px 4px 0 var(--ink); }
-.btn:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--ink); }
-.btn.ghost { background: var(--paper); color: var(--ink); }
-.btn.small { padding: .45rem .9rem; font-size: .85rem; border-radius: 10px; box-shadow: 2px 2px 0 var(--ink); }
+.btn:hover { background: var(--red-dark); }
+.btn.ghost { background: transparent; color: var(--red); box-shadow: inset 0 0 0 2px var(--red); }
+.btn.ghost:hover { background: var(--red); color: var(--paper); }
+.btn.small { padding: .45rem .95rem; font-size: .85rem; }
 
 /* ── Sena's painted stripes ────────────────────────────────── */
 .stripes { background: var(--blue) url("images/stripes.jpg") center / cover; }
 
 /* ── Hero ──────────────────────────────────────────────────── */
+/* fills the first screen under the header, logo dead centre */
 .hero {
   display: grid; place-items: center;
-  padding: clamp(72px, 10vw, 128px) var(--gutter);
+  min-height: calc(100svh - var(--head, 84px));
+  padding: 48px var(--gutter);
 }
-.hero-card {
-  background: var(--paper);
-  padding: clamp(32px, 5vw, 60px);
-  text-align: center;
-  max-width: 620px; width: 100%;
-}
-.hero-logo { width: 88px; height: 88px; margin: 0 auto 1rem; }
-.hero h1 { font-size: clamp(3.2rem, 8vw, 5.6rem); color: var(--red); margin-bottom: .25em; }
-.tagline { font-size: clamp(1.02rem, 1.6vw, 1.18rem); max-width: 460px; margin: 0 auto 1.8rem; }
-.hero-actions { display: flex; gap: .9rem; justify-content: center; flex-wrap: wrap; }
+.hero-mark { position: relative; width: min(420px, 72vw); }
+.hero h1 { margin: 0; }
+.hero h1 img { width: 100%; height: auto; }
 
 
 /* ── Sections ──────────────────────────────────────────────── */
@@ -124,11 +116,11 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.2rem); color: var(--red); }
 .section-head h2 { margin: 0; }
 .filters { display: flex; gap: .5rem; flex-wrap: wrap; }
 .filter {
-  border: 2px solid var(--ink); background: var(--paper); color: var(--ink);
-  padding: .4rem 1rem; border-radius: 999px; cursor: pointer; font: 600 .88rem var(--sans);
+  border: none; background: transparent; color: var(--red); box-shadow: inset 0 0 0 2px var(--red);
+  padding: .45rem 1.05rem; border-radius: 999px; cursor: pointer; font: 600 .88rem var(--sans);
 }
-.filter:hover { background: var(--olive-soft); }
-.filter.active { background: var(--ink); color: var(--paper); }
+.filter:hover { background: rgba(178, 58, 31, .08); }
+.filter.active { background: var(--red); color: var(--paper); }
 
 /* ── Gallery ───────────────────────────────────────────────── */
 .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.6rem 1.4rem; }
@@ -136,7 +128,6 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.2rem); color: var(--red); }
 .card .media {
   aspect-ratio: 4 / 5; position: relative; overflow: hidden; cursor: zoom-in;
   border-radius: var(--radius); background: var(--olive-soft);
-  border: 2px solid var(--ink);
 }
 .card .media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: opacity .3s, transform .5s; }
 .card .media img.alt { opacity: 0; }
@@ -151,7 +142,7 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.2rem); color: var(--red); }
 .placeholder small { display: block; font: 600 .7rem var(--sans); letter-spacing: .12em; text-transform: uppercase; opacity: .7; margin-top: .4rem; }
 .badge {
   position: absolute; top: .7rem; left: .7rem; z-index: 1;
-  background: var(--paper); color: var(--ink); border: 1.5px solid var(--ink);
+  background: var(--paper); color: var(--ink);
   font-size: .7rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
   padding: .2rem .6rem; border-radius: 999px;
 }
@@ -172,6 +163,7 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.2rem); color: var(--red); }
 .gingham {
   padding: clamp(64px, 9vw, 112px) var(--gutter);
   background: var(--blue) url("images/gingham.jpg") center / cover;
+  overflow: hidden;
 }
 .wavy {
   position: relative; isolation: isolate;
@@ -181,7 +173,9 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.2rem); color: var(--red); }
 .wavy .wave { position: absolute; inset: 0; width: 100%; height: 100%; z-index: -1; overflow: visible; }
 .wavy p { font-size: 1.08rem; margin: 0 auto 1.8rem; max-width: 480px; }
 .wavy .leaf-a { width: 118px; top: -34px; left: -6px; transform: rotate(-18deg); }
-.wavy .leaf-b { width: 92px; bottom: -30px; right: 2%; transform: rotate(24deg); }
+/* stems point in toward the text */
+.wavy .leaf-b { width: 96px; bottom: -36px; right: 7%; transform: rotate(-40deg); }
+.wavy .leaf-c { width: 78px; bottom: 22%; right: -40px; transform: rotate(-95deg); }
 
 /* ── About ─────────────────────────────────────────────────── */
 .about { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: clamp(32px, 6vw, 80px); align-items: center; }
@@ -195,10 +189,10 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.2rem); color: var(--red); }
 .events { list-style: none; padding: 0; margin: 1.8rem 0 0; display: grid; gap: 1rem; }
 .events li {
   display: grid; grid-template-columns: auto 1fr auto; gap: 1.2rem; align-items: center;
-  background: var(--paper); border: 2px solid var(--ink); border-radius: var(--radius);
+  background: var(--paper); border-radius: var(--radius);
   padding: 1rem 1.2rem;
 }
-.events li.empty { grid-template-columns: 1fr; border-style: dashed; }
+.events li.empty { grid-template-columns: 1fr; }
 /* postage-stamp date */
 .events .date {
   --r: 5px;
@@ -222,9 +216,9 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.2rem); color: var(--red); }
   background: var(--paper); padding: clamp(40px, 6vw, 64px) clamp(24px, 5vw, 56px);
 }
 /* little stars tucked on the corners of the cream cards */
-.hero-card, .contact-card { position: relative; }
-.hero-card .star-a, .contact-card .star-a { width: 64px; top: -26px; left: -24px; transform: rotate(-10deg); }
-.hero-card .star-b, .contact-card .star-b { width: 46px; bottom: -18px; right: -16px; transform: rotate(14deg); }
+.contact-card { position: relative; }
+.hero-mark .star-a, .contact-card .star-a { width: 64px; top: -26px; left: -24px; transform: rotate(-10deg); }
+.hero-mark .star-b, .contact-card .star-b { width: 46px; bottom: -18px; right: -16px; transform: rotate(14deg); }
 .contact-links { display: flex; gap: .9rem; flex-wrap: wrap; justify-content: center; margin-top: 1.4rem; }
 
 /* ── Footer ────────────────────────────────────────────────── */
@@ -236,7 +230,7 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.2rem); color: var(--red); }
 
 /* ── Lightbox ──────────────────────────────────────────────── */
 dialog#lightbox {
-  border: 2px solid var(--ink); padding: 0; border-radius: 18px;
+  border: none; padding: 0; border-radius: 18px;
   max-width: min(980px, calc(100vw - 24px)); width: 100%;
   max-height: calc(100dvh - 24px);
   background: var(--paper); color: var(--ink);
@@ -250,7 +244,7 @@ dialog#lightbox::backdrop { background: rgba(43, 22, 12, .72); }
 .lb-frame .placeholder { position: static; min-height: 320px; color: var(--paper); }
 .lb-nav {
   position: absolute; top: 50%; transform: translateY(-50%); z-index: 1;
-  width: 42px; height: 42px; border-radius: 50%; border: 2px solid var(--ink);
+  width: 42px; height: 42px; border-radius: 50%; border: none;
   background: var(--paper); color: var(--ink); font-size: 1.6rem; line-height: 1; cursor: pointer;
 }
 .lb-nav.prev { left: 12px; }
@@ -262,14 +256,14 @@ dialog#lightbox::backdrop { background: rgba(43, 22, 12, .72); }
   width: 56px; height: 70px; padding: 0; border: 2px solid transparent; border-radius: 8px;
   overflow: hidden; cursor: pointer; background: none; opacity: .6;
 }
-.lb-thumbs button.on { border-color: var(--ink); opacity: 1; }
+.lb-thumbs button.on { border-color: var(--red); opacity: 1; }
 .lb-thumbs img { width: 100%; height: 100%; object-fit: cover; }
 .lb-body { padding: 1.2rem 1.5rem 1.6rem; }
 .lb-body h3 { font-size: 2rem; color: var(--red); margin-bottom: .3rem; }
 .lb-body .price { font-size: 2rem; display: block; margin: .8rem 0 1rem; }
 .close {
   position: absolute; top: .6rem; right: .7rem; z-index: 2;
-  background: var(--paper); border: 2px solid var(--ink); width: 38px; height: 38px; border-radius: 50%;
+  background: var(--paper); border: none; width: 38px; height: 38px; border-radius: 50%;
   font-size: 1.4rem; cursor: pointer; line-height: 1; color: var(--ink);
 }
 
@@ -285,8 +279,8 @@ dialog#lightbox::backdrop { background: rgba(43, 22, 12, .72); }
   .nav { flex-direction: column; align-items: flex-start; gap: .35rem; padding-bottom: .5rem; }
   .nav nav { gap: 1.2rem; width: 100%; overflow-x: auto; scrollbar-width: none; }
   .nav { align-items: center; }
-  .brand { width: 88px; }
-  .hero { padding: 56px 16px; }
+  .brand { font-size: 1.5rem; }
+  .hero { padding: 40px 16px; }
   .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.2rem .8rem; }
   .card .desc { display: none; }
   .card .row { flex-direction: column; align-items: stretch; gap: .5rem; }
@@ -295,7 +289,8 @@ dialog#lightbox::backdrop { background: rgba(43, 22, 12, .72); }
   .events li { grid-template-columns: auto 1fr; }
   .events li .btn { grid-column: 1 / -1; text-align: center; }
   .wavy .leaf-a { width: 80px; top: -26px; }
-  .wavy .leaf-b { width: 64px; bottom: -22px; }
-  .hero-card .star-a, .contact-card .star-a { width: 46px; top: -18px; left: -10px; }
-  .hero-card .star-b, .contact-card .star-b { width: 34px; bottom: -12px; right: -8px; }
+  .wavy .leaf-b { width: 64px; bottom: -24px; }
+  .wavy .leaf-c { width: 52px; right: -22px; }
+  .hero-mark .star-a, .contact-card .star-a { width: 46px; top: -18px; left: -10px; }
+  .hero-mark .star-b, .contact-card .star-b { width: 34px; bottom: -12px; right: -8px; }
 }
