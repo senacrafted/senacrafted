@@ -15,6 +15,7 @@
   --blue: #88b8ce;         /* bleu porcelaine */
   --olive: #b79858;        /* eau trouble */
   --olive-soft: #ddd6a6;
+  --beige: #f4edc8;        /* custom-orders box */
   --honey: #f1c166;        /* miel doré */
   --line: rgba(84, 41, 22, .14);
 
@@ -172,10 +173,10 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.2rem); color: var(--red); }
 }
 .wavy .wave { position: absolute; inset: 0; width: 100%; height: 100%; z-index: -1; overflow: visible; }
 .wavy p { font-size: 1.08rem; margin: 0 auto 1.8rem; max-width: 480px; }
-.wavy .leaf-a { width: 118px; top: -34px; left: -6px; transform: rotate(-18deg); }
+.wavy .leaf-a { width: 88px; top: -28px; left: max(-22px, calc(4px - var(--gutter))); transform: rotate(-18deg); }
 /* stems point in toward the text */
-.wavy .leaf-b { width: 96px; bottom: -36px; right: 7%; transform: rotate(-40deg); }
-.wavy .leaf-c { width: 78px; bottom: 22%; right: -40px; transform: rotate(-95deg); }
+.wavy .leaf-b { width: 78px; bottom: -53px; right: 26px; transform: rotate(-40deg); }
+.wavy .leaf-c { width: 60px; bottom: 44px; right: max(-34px, calc(4px - var(--gutter))); transform: rotate(-95deg); }
 
 /* ── About ─────────────────────────────────────────────────── */
 .about { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: clamp(32px, 6vw, 80px); align-items: center; }
@@ -288,9 +289,9 @@ dialog#lightbox::backdrop { background: rgba(43, 22, 12, .72); }
   .price { font-size: 1.35rem; }
   .events li { grid-template-columns: auto 1fr; }
   .events li .btn { grid-column: 1 / -1; text-align: center; }
-  .wavy .leaf-a { width: 80px; top: -26px; }
-  .wavy .leaf-b { width: 64px; bottom: -24px; }
-  .wavy .leaf-c { width: 52px; right: -22px; }
+  .wavy .leaf-a { width: 64px; top: -20px; }
+  .wavy .leaf-b { width: 56px; bottom: -38px; right: 18px; }
+  .wavy .leaf-c { width: 44px; bottom: 32px; }
   .hero-mark .star-a, .contact-card .star-a { width: 46px; top: -18px; left: -10px; }
   .hero-mark .star-b, .contact-card .star-b { width: 34px; bottom: -12px; right: -8px; }
 }

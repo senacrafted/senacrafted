@@ -118,7 +118,7 @@ function drawWavy(el) {
   edge(L, B, L, T, -1, 0);
   const d = "M" + pts.map(([x, y]) => `${x.toFixed(1)} ${y.toFixed(1)}`).join("L") + "Z";
   el.querySelector(".wave").innerHTML =
-    `<path d="${d}" fill="var(--olive-soft)" stroke="var(--red)" stroke-width="13" stroke-linejoin="round" filter="url(#painted)"/>`;
+    `<path d="${d}" fill="var(--beige)" stroke="var(--red)" stroke-width="13" stroke-linejoin="round" filter="url(#painted)"/>`;
 }
 
 // Fill in site-wide text
