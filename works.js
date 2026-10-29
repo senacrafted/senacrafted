@@ -28,7 +28,7 @@ const SITE = {
 const WORKS = [
   // ── Leather ──
   { title: "Swan Leather Book Cover", category: "leather", price: 195, status: "available",
-    photos: ["images/swan-cover-1.jpg", "images/swan-cover-2.jpg", "images/swan-cover-3.jpg", "images/swan-cover-4.jpg", "images/swan-cover-5.jpg"],
+    photos: ["images/swan-cover-5.jpg", "images/swan-cover-1.jpg", "images/swan-cover-2.jpg", "images/swan-cover-3.jpg", "images/swan-cover-4.jpg"],
     description: "Black leather book cover with a hand-stitched, hand-painted pair of swans — one white, one black — and an elastic closure. The swan outlines show through on the inside.", buyLink: "" },
   { title: "Crow Keychain", category: "leather", price: null, status: "available",
     photos: ["images/crow-keychain-2.jpg", "images/crow-keychain-1.jpg", "images/crow-keychain-3.jpg", "images/crow-keychain-4.jpg", "images/owl-keychain-1.jpg"],
@@ -42,12 +42,6 @@ const WORKS = [
   { title: "Yellow Bird Journal Cover", category: "leather", price: null, status: "available",
     photos: ["images/bird-journal-cover-1.jpg"],
     description: "Brown leather journal cover with a stitched mustard-yellow bird and a little red checkered detail.", buyLink: "" },
-  { title: "Leather Journal Cover — Flower", category: "leather", price: 49.99, status: "available",
-    photos: ["images/journal-cover-flower.jpg"],
-    description: "Tan leather panel with a stitched navy flower, framed in green leather and scattered gold stars.", buyLink: "" },
-  { title: "Leather Flower Patch", category: "leather", price: 49.99, status: "available",
-    photos: ["images/leather-flower-patch.jpg"],
-    description: "Red leather blooms on a cream leather base, hand-stitched with contrast thread.", buyLink: "" },
   { title: "Leather Card Holder", category: "leather", price: 49.99, status: "available",
     photos: ["images/leather-wallet.jpg"],
     description: "Slim brown leather card sleeve, hand-stitched — fits a few cards in your front pocket.", buyLink: "" },
@@ -71,9 +65,6 @@ const WORKS = [
   { title: "Greetings from Georgia Print", category: "paper", price: 19.99, status: "available",
     photos: ["images/illustration-print.jpg"],
     description: "A nostalgic road-trip illustration print — palms, a little red car, and two friends on the move.", buyLink: "" },
-  { title: "Handmade Sketchbook", category: "paper", price: 29.99, status: "available",
-    photos: ["images/sketchbook.jpg"],
-    description: "A hand-bound sketchbook with a hand-painted bunny cover.", buyLink: "" },
 ];
 
 // Upcoming festivals & markets. Remove past ones as you go.

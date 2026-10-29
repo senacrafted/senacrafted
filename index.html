@@ -27,7 +27,13 @@
   <div class="announce" data-site="announcement"></div>
 
   <header class="nav">
-    <a href="#top" class="brand"><img src="images/logo.png" alt=""><span data-site="name"></span></a>
+    <a href="#top" class="brand" aria-label="Sena Crafted — home">
+      <svg viewBox="0 30 200 100" aria-hidden="true">
+        <path id="brand-arc" d="M 14 100 A 110 110 0 0 1 186 100" fill="none"/>
+        <text><textPath href="#brand-arc" startOffset="50%" text-anchor="middle" data-site="name"></textPath></text>
+        <image href="images/logo.png" x="70" y="70" width="60" height="60"/>
+      </svg>
+    </a>
     <nav>
       <a href="#work">Shop</a>
       <a href="#custom">Custom</a>
@@ -39,10 +45,6 @@
 
   <main id="top">
     <section class="hero stripes">
-      <img class="doodle sun" src="images/doodles/sun.svg" alt="">
-      <img class="doodle cloud" src="images/doodles/cloud.svg" alt="">
-      <img class="doodle bird" src="images/doodles/bird.svg" alt="">
-
       <div class="hero-card">
         <img class="hero-logo" src="images/logo.png" alt="">
         <h1 data-site="name"></h1>
@@ -51,12 +53,6 @@
           <a href="#work" class="btn">Shop the work</a>
           <a href="#events" class="btn ghost">Where I'll be next</a>
         </div>
-      </div>
-
-      <div class="snapshots" aria-hidden="true">
-        <a href="#work" class="snap"><img src="images/swan-cover-1.jpg" alt=""><span>swan cover</span></a>
-        <a href="#work" class="snap"><img src="images/crow-keychain-2.jpg" alt=""><span>little crows</span></a>
-        <a href="#work" class="snap"><img src="images/willow-postcard-1.jpg" alt=""><span>willow postcard</span></a>
       </div>
     </section>
 
@@ -83,8 +79,8 @@
 
     <section id="about" class="section about">
       <div class="about-photos">
-        <figure class="snap tilt-l"><img src="images/bts-workbench.jpg" alt="Sena's workbench with leather, tools, and a cutting mat"><figcaption>my workbench</figcaption></figure>
-        <figure class="snap tilt-r"><img src="images/bts-crow-eyes.jpg" alt="Leather crow eyes cut out and waiting to be stitched"><figcaption>crow eyes in progress</figcaption></figure>
+        <img src="images/bts-workbench.jpg" alt="Sena's workbench with leather, tools, and a cutting mat">
+        <img src="images/bts-crow-eyes.jpg" alt="Leather crow eyes cut out and waiting to be stitched">
       </div>
       <div class="about-text">
         <h2><i class="spark"></i>Hi, I'm Sena</h2>

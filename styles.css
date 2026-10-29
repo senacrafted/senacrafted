@@ -25,7 +25,7 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+html { scroll-behavior: smooth; scroll-padding-top: 120px; }
 body {
   margin: 0;
   background: var(--cream);
@@ -76,12 +76,10 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.2rem); color: var(--red); }
     radial-gradient(circle at 11px 0, var(--paper) 10.5px, transparent 11.5px) 22px 0 / 44px 18px repeat-x;
   filter: drop-shadow(0 2px 0 rgba(84, 41, 22, .12));
 }
-.brand {
-  display: flex; align-items: center; gap: .55rem;
-  font-family: var(--hand); font-size: 1.7rem; color: var(--red);
-  text-decoration: none; white-space: nowrap; line-height: 1;
-}
-.brand img { width: 40px; height: 40px; }
+/* name arched over the cat logo */
+.brand { display: block; width: 156px; text-decoration: none; }
+.brand svg { display: block; width: 100%; height: auto; overflow: visible; }
+.brand text { font-family: var(--hand); font-size: 21px; letter-spacing: .5px; fill: var(--red); }
 .nav nav { display: flex; gap: 1.6rem; }
 .nav nav a { text-decoration: none; font-weight: 600; font-size: .95rem; white-space: nowrap; }
 .nav nav a:hover { color: var(--red); }
@@ -114,51 +112,20 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.2rem); color: var(--red); }
 
 /* ── Hero ──────────────────────────────────────────────────── */
 .hero {
-  display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-  align-items: center; gap: clamp(24px, 5vw, 64px);
-  padding: clamp(72px, 10vw, 128px) var(--gutter) clamp(56px, 8vw, 96px);
+  display: grid; place-items: center;
+  padding: clamp(72px, 10vw, 128px) var(--gutter);
 }
 .hero-card {
-  position: relative; z-index: 1;
   background: var(--paper);
-  padding: clamp(28px, 5vw, 56px);
+  padding: clamp(32px, 5vw, 60px);
   text-align: center;
-  max-width: 600px; justify-self: end; width: 100%;
+  max-width: 620px; width: 100%;
 }
 .hero-logo { width: 88px; height: 88px; margin: 0 auto 1rem; }
 .hero h1 { font-size: clamp(3.2rem, 8vw, 5.6rem); color: var(--red); margin-bottom: .25em; }
 .tagline { font-size: clamp(1.02rem, 1.6vw, 1.18rem); max-width: 460px; margin: 0 auto 1.8rem; }
 .hero-actions { display: flex; gap: .9rem; justify-content: center; flex-wrap: wrap; }
 
-.hero .sun   { width: clamp(70px, 9vw, 120px); top: 28px; left: 3%; transform: rotate(-8deg); }
-.hero .cloud { width: clamp(80px, 10vw, 140px); bottom: 26px; left: 40%; }
-.hero .bird  { width: clamp(80px, 10vw, 130px); top: 36px; right: 5%; transform: rotate(-6deg); }
-
-/* polaroid snapshots */
-.snapshots { position: relative; height: clamp(380px, 42vw, 520px); max-width: 560px; }
-.snap {
-  display: block; position: absolute; margin: 0;
-  background: #fffdf8; padding: 10px 10px 0;
-  box-shadow: 0 10px 24px rgba(60, 30, 15, .22);
-  text-decoration: none;
-  transition: transform .2s;
-}
-.snap img { aspect-ratio: 4 / 5; object-fit: cover; width: 100%; }
-.snap span, .snap figcaption {
-  display: block; text-align: center;
-  font-family: var(--hand); font-size: 1.25rem; color: var(--ink);
-  padding: .45rem 0 .55rem;
-}
-.snap::before { /* tape */
-  content: ""; position: absolute; top: -12px; left: 50%; width: 76px; height: 24px;
-  transform: translateX(-50%) rotate(-3deg);
-  background: rgba(241, 193, 102, .7);
-}
-.snapshots .snap { width: 46%; }
-.snapshots .snap:nth-child(1) { left: 0; top: 6%; transform: rotate(-6deg); z-index: 2; }
-.snapshots .snap:nth-child(2) { left: 30%; top: 0; transform: rotate(4deg); z-index: 1; }
-.snapshots .snap:nth-child(3) { left: 52%; top: 30%; transform: rotate(-2deg); z-index: 3; }
-.snapshots .snap:hover { transform: rotate(0) scale(1.03); z-index: 4; }
 
 /* ── Sections ──────────────────────────────────────────────── */
 .section { padding: clamp(64px, 9vw, 112px) var(--gutter); max-width: 1240px; margin: 0 auto; position: relative; }
@@ -213,11 +180,7 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.2rem); color: var(--red); }
 /* ── Custom orders: gingham + wavy frame ───────────────────── */
 .gingham {
   padding: clamp(64px, 9vw, 112px) var(--gutter);
-  background-color: var(--paper);
-  background-image:
-    linear-gradient(90deg, rgba(136, 184, 206, .45) 50%, transparent 50%),
-    linear-gradient(rgba(136, 184, 206, .45) 50%, transparent 50%);
-  background-size: 30px 30px;
+  background: var(--blue) url("images/gingham.jpg") center / cover;
 }
 .wavy {
   position: relative; isolation: isolate;
@@ -230,11 +193,8 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.2rem); color: var(--red); }
 
 /* ── About ─────────────────────────────────────────────────── */
 .about { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: clamp(32px, 6vw, 80px); align-items: center; }
-.about-photos { position: relative; height: clamp(380px, 40vw, 500px); }
-.about-photos .snap { width: 52%; }
-.about-photos .tilt-l { left: 0; top: 0; transform: rotate(-4deg); }
-.about-photos .tilt-r { right: 0; bottom: 0; transform: rotate(5deg); }
-.about-photos .snap:hover { z-index: 2; }
+.about-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.about-photos img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
 .about-text p { font-size: 1.12rem; max-width: 560px; }
 
 /* ── Events ────────────────────────────────────────────────── */
@@ -321,12 +281,7 @@ dialog#lightbox::backdrop { background: rgba(43, 22, 12, .72); }
 
 /* ── Smaller screens ───────────────────────────────────────── */
 @media (max-width: 900px) {
-  .hero { grid-template-columns: 1fr; }
-  .hero-card { justify-self: center; }
-  .snapshots { width: 100%; max-width: 480px; margin: 0 auto; height: clamp(300px, 80vw, 440px); }
-  .hero .cloud { display: none; }
   .about { grid-template-columns: 1fr; }
-  .about-photos { max-width: 460px; width: 100%; margin: 0 auto; height: clamp(340px, 95vw, 480px); }
   dialog#lightbox[open] { grid-template-columns: 1fr; grid-template-rows: auto; }
   .lb-media { grid-row: auto; min-height: 0; }
   .lb-frame { height: auto; }
@@ -335,14 +290,9 @@ dialog#lightbox::backdrop { background: rgba(43, 22, 12, .72); }
 @media (max-width: 640px) {
   .nav { flex-direction: column; align-items: flex-start; gap: .35rem; padding-bottom: .5rem; }
   .nav nav { gap: 1.2rem; width: 100%; overflow-x: auto; scrollbar-width: none; }
-  .brand { font-size: 1.5rem; }
-  .brand img { width: 34px; height: 34px; }
-  .hero { padding-top: 64px; }
-  .hero .sun { top: 14px; left: 10px; width: 60px; }
-  .hero .bird { top: 18px; right: 10px; width: 72px; }
-  .snap { padding: 6px 6px 0; }
-  .snap span, .snap figcaption { font-size: .95rem; padding: .3rem 0 .4rem; }
-  .snap::before { width: 52px; height: 18px; top: -9px; }
+  .nav { align-items: center; }
+  .brand { width: 112px; }
+  .hero { padding: 56px 16px; }
   .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.2rem .8rem; }
   .card .desc { display: none; }
   .card .row { flex-direction: column; align-items: stretch; gap: .5rem; }
