@@ -49,8 +49,8 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.2rem); color: var(--red); }
 .spark {
   display: inline-block; width: .7em; height: .7em; margin-right: .3em; vertical-align: .02em;
   background: currentColor;
-  -webkit-mask: url("images/doodles/sparkle.svg") center / contain no-repeat;
-          mask: url("images/doodles/sparkle.svg") center / contain no-repeat;
+  -webkit-mask: url("images/drawings/star-2.webp") center / contain no-repeat;
+          mask: url("images/drawings/star-2.webp") center / contain no-repeat;
 }
 .doodle { position: absolute; pointer-events: none; user-select: none; }
 
@@ -77,9 +77,8 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.2rem); color: var(--red); }
   filter: drop-shadow(0 2px 0 rgba(84, 41, 22, .12));
 }
 /* name arched over the cat logo */
-.brand { display: block; width: 156px; text-decoration: none; }
-.brand svg { display: block; width: 100%; height: auto; overflow: visible; }
-.brand text { font-family: var(--hand); font-size: 21px; letter-spacing: .5px; fill: var(--red); }
+.brand { display: block; width: 104px; }
+.brand img { width: 100%; height: auto; }
 .nav nav { display: flex; gap: 1.6rem; }
 .nav nav a { text-decoration: none; font-weight: 600; font-size: .95rem; white-space: nowrap; }
 .nav nav a:hover { color: var(--red); }
@@ -99,16 +98,8 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.2rem); color: var(--red); }
 .btn.ghost { background: var(--paper); color: var(--ink); }
 .btn.small { padding: .45rem .9rem; font-size: .85rem; border-radius: 10px; box-shadow: 2px 2px 0 var(--ink); }
 
-/* ── Painted stripes ───────────────────────────────────────── */
-.stripes { position: relative; isolation: isolate; overflow: hidden; }
-.stripes::before {
-  content: ""; position: absolute; inset: -12px; z-index: -1;
-  background: repeating-linear-gradient(90deg, var(--blue) 0 38px, var(--paper) 38px 62px);
-  filter: url(#painted);
-}
-.stripes.olive::before {
-  background: repeating-linear-gradient(90deg, var(--olive) 0 46px, var(--blue) 46px 64px);
-}
+/* ── Sena's painted stripes ────────────────────────────────── */
+.stripes { background: var(--blue) url("images/stripes.jpg") center / cover; }
 
 /* ── Hero ──────────────────────────────────────────────────── */
 .hero {
@@ -189,7 +180,8 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.2rem); color: var(--red); }
 }
 .wavy .wave { position: absolute; inset: 0; width: 100%; height: 100%; z-index: -1; overflow: visible; }
 .wavy p { font-size: 1.08rem; margin: 0 auto 1.8rem; max-width: 480px; }
-.wavy .needle { width: 84px; top: -26px; right: 4%; transform: rotate(8deg); }
+.wavy .leaf-a { width: 118px; top: -34px; left: -6px; transform: rotate(-18deg); }
+.wavy .leaf-b { width: 92px; bottom: -30px; right: 2%; transform: rotate(24deg); }
 
 /* ── About ─────────────────────────────────────────────────── */
 .about { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: clamp(32px, 6vw, 80px); align-items: center; }
@@ -199,7 +191,7 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.2rem); color: var(--red); }
 
 /* ── Events ────────────────────────────────────────────────── */
 .events-section { padding-top: 0; }
-.events-section .stall { width: clamp(110px, 14vw, 160px); position: static; margin-bottom: .6rem; }
+.events-section .car { width: clamp(150px, 18vw, 210px); position: static; margin-bottom: .4rem; }
 .events { list-style: none; padding: 0; margin: 1.8rem 0 0; display: grid; gap: 1rem; }
 .events li {
   display: grid; grid-template-columns: auto 1fr auto; gap: 1.2rem; align-items: center;
@@ -229,7 +221,10 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.2rem); color: var(--red); }
   position: relative; max-width: 560px; margin: 0 auto; text-align: center;
   background: var(--paper); padding: clamp(40px, 6vw, 64px) clamp(24px, 5vw, 56px);
 }
-.contact-card .envelope { width: 92px; top: -40px; left: 50%; transform: translateX(-50%) rotate(-6deg); }
+/* little stars tucked on the corners of the cream cards */
+.hero-card, .contact-card { position: relative; }
+.hero-card .star-a, .contact-card .star-a { width: 64px; top: -26px; left: -24px; transform: rotate(-10deg); }
+.hero-card .star-b, .contact-card .star-b { width: 46px; bottom: -18px; right: -16px; transform: rotate(14deg); }
 .contact-links { display: flex; gap: .9rem; flex-wrap: wrap; justify-content: center; margin-top: 1.4rem; }
 
 /* ── Footer ────────────────────────────────────────────────── */
@@ -237,8 +232,7 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.2rem); color: var(--red); }
   background: var(--ink); color: var(--cream);
   text-align: center; padding: 2.2rem 16px 2.6rem; font-size: .88rem;
 }
-.spark-row { color: var(--honey); font-size: 1.3rem; margin-bottom: .6rem; }
-.spark-row .spark { margin: 0 .35rem; }
+.footer .mushrooms { width: 64px; margin: 0 auto .8rem; }
 
 /* ── Lightbox ──────────────────────────────────────────────── */
 dialog#lightbox {
@@ -291,7 +285,7 @@ dialog#lightbox::backdrop { background: rgba(43, 22, 12, .72); }
   .nav { flex-direction: column; align-items: flex-start; gap: .35rem; padding-bottom: .5rem; }
   .nav nav { gap: 1.2rem; width: 100%; overflow-x: auto; scrollbar-width: none; }
   .nav { align-items: center; }
-  .brand { width: 112px; }
+  .brand { width: 88px; }
   .hero { padding: 56px 16px; }
   .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.2rem .8rem; }
   .card .desc { display: none; }
@@ -300,5 +294,8 @@ dialog#lightbox::backdrop { background: rgba(43, 22, 12, .72); }
   .price { font-size: 1.35rem; }
   .events li { grid-template-columns: auto 1fr; }
   .events li .btn { grid-column: 1 / -1; text-align: center; }
-  .wavy .needle { width: 64px; top: -18px; }
+  .wavy .leaf-a { width: 80px; top: -26px; }
+  .wavy .leaf-b { width: 64px; bottom: -22px; }
+  .hero-card .star-a, .contact-card .star-a { width: 46px; top: -18px; left: -10px; }
+  .hero-card .star-b, .contact-card .star-b { width: 34px; bottom: -12px; right: -8px; }
 }

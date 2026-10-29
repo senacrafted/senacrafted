@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Hand-painted wobble for stripes and frames -->
+  <!-- Hand-painted wobble for the wavy frame -->
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
     <filter id="painted">
       <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="3"/>
@@ -27,13 +27,7 @@
   <div class="announce" data-site="announcement"></div>
 
   <header class="nav">
-    <a href="#top" class="brand" aria-label="Sena Crafted — home">
-      <svg viewBox="0 30 200 100" aria-hidden="true">
-        <path id="brand-arc" d="M 14 100 A 110 110 0 0 1 186 100" fill="none"/>
-        <text><textPath href="#brand-arc" startOffset="50%" text-anchor="middle" data-site="name"></textPath></text>
-        <image href="images/logo.png" x="70" y="70" width="60" height="60"/>
-      </svg>
-    </a>
+    <a href="#top" class="brand"><img src="images/drawings/logo-arched.webp" alt="Sena Crafted — home"></a>
     <nav>
       <a href="#work">Shop</a>
       <a href="#custom">Custom</a>
@@ -46,6 +40,8 @@
   <main id="top">
     <section class="hero stripes">
       <div class="hero-card">
+        <img class="doodle star-a" src="images/drawings/star-1.webp" alt="">
+        <img class="doodle star-b" src="images/drawings/star-3.webp" alt="">
         <img class="hero-logo" src="images/logo.png" alt="">
         <h1 data-site="name"></h1>
         <p class="tagline" data-site="tagline"></p>
@@ -70,7 +66,8 @@
 
     <section id="custom" class="gingham">
       <div class="wavy">
-        <img class="doodle needle" src="images/doodles/needle.svg" alt="">
+        <img class="doodle leaf-a" src="images/drawings/leaf-1.webp" alt="">
+        <img class="doodle leaf-b" src="images/drawings/leaf-3.webp" alt="">
         <h2>Custom orders</h2>
         <p>Want a journal cover with your favorite flower, a leather patch for your jacket, or a painting of a place you love? Tell me what you have in mind and I'll send back a quote and timeline.</p>
         <a class="btn" id="custom-btn" href="#">Start a custom order</a>
@@ -89,15 +86,16 @@
     </section>
 
     <section id="events" class="section events-section">
-      <img class="doodle stall" src="images/doodles/stall.svg" alt="">
+      <img class="doodle car" src="images/drawings/car.webp" alt="">
       <h2>Find me at a festival</h2>
       <p class="muted">Come see the work in person — everything looks better off a screen.</p>
       <ul id="event-list" class="events"></ul>
     </section>
 
-    <section id="contact" class="contact stripes olive">
+    <section id="contact" class="contact stripes">
       <div class="contact-card">
-        <img class="doodle envelope" src="images/doodles/envelope.svg" alt="">
+        <img class="doodle star-a" src="images/drawings/star-4.webp" alt="">
+        <img class="doodle star-b" src="images/drawings/star-2.webp" alt="">
         <h2>Say hello</h2>
         <p class="muted">Questions, commissions, or wholesale — I read every message.</p>
         <div class="contact-links">
@@ -109,7 +107,7 @@
   </main>
 
   <footer class="footer">
-    <div class="spark-row" aria-hidden="true"><i class="spark"></i><i class="spark"></i><i class="spark"></i></div>
+    <img class="mushrooms" src="images/drawings/mushrooms.webp" alt="">
     <span>© <span id="year"></span> <span data-site="name"></span> · <span data-site="location"></span></span>
   </footer>
 
