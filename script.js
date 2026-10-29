@@ -4,7 +4,9 @@ const $ = (sel) => document.querySelector(sel);
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 
 const money = (n) => "$" + (Number.isInteger(n) ? n : n.toFixed(2));
-const hasPrice = (w) => typeof w.price === "number" && w.price > 0;
+// price can be a number or a [low, high] range
+const hasPrice = (w) => (Array.isArray(w.price) ? w.price.length === 2 : typeof w.price === "number" && w.price > 0);
+const priceText = (p) => (Array.isArray(p) ? `${money(p[0])}–${money(p[1])}` : money(p));
 
 const mailto = (subject, body = "") =>
   `mailto:${SITE.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
@@ -19,7 +21,10 @@ function placeholder(work) {
 
 function action(work) {
   if (work.status === "sold") return `<span class="muted" style="font-size:.85rem">Ask about similar</span>`;
-  if (work.buyLink) return `<a class="btn small" href="${esc(work.buyLink)}" target="_blank" rel="noopener">Buy now</a>`;
+  if (work.buyLink) {
+    const label = /etsy\.com/.test(work.buyLink) ? "Buy on Etsy" : "Buy now";
+    return `<a class="btn small" href="${esc(work.buyLink)}" target="_blank" rel="noopener">${label}</a>`;
+  }
   const verb = work.status === "custom" ? "Order one" : "Ask about it";
   return `<a class="btn small ghost" href="${mailto(`About: ${work.title}`, `Hi! I'm interested in "${work.title}".\n\n`)}">${verb}</a>`;
 }
@@ -32,7 +37,7 @@ function badge(work) {
 
 function priceTag(w) {
   if (!hasPrice(w)) return "<span></span>";
-  return `<span class="price">${money(w.price)}${w.status === "custom" ? "+" : ""}</span>`;
+  return `<span class="price">${priceText(w.price)}${w.status === "custom" ? "+" : ""}</span>`;
 }
 
 function renderGallery(filter = "all") {
@@ -133,6 +138,8 @@ if (SITE.instagram) {
 } else {
   $("#ig-link").remove();
 }
+if (SITE.etsy) $("#etsy-link").href = SITE.etsy;
+else $("#etsy-link").remove();
 $("#custom-btn").href = mailto(
   "Custom order request",
   "Hi! I'd love a custom piece.\n\nWhat I'm looking for:\nSize / colors:\nWhen I need it by:\n"
