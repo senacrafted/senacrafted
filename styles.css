@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Sena Handwriting";
-  src: url("fonts/SenaHandwriting-Regular.ttf?v=202610292035") format("truetype");
+  src: url("fonts/SenaHandwriting-Regular.ttf?v=202610292040") format("truetype");
   font-display: swap;
 }
 
@@ -101,26 +101,29 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.2rem); color: var(--red); }
 .btn.small { padding: .45rem .95rem; font-size: .85rem; }
 
 /* ── Sena's painted stripes ────────────────────────────────── */
-.stripes { background: var(--blue) url("images/stripes.jpg?v=202610292035") center / cover; }
-.stripes.khaki { background-image: url("images/stripes-olive.jpg?v=202610292035"); }
+.stripes { background: var(--blue) url("images/stripes.jpg?v=202610292040") center / cover; }
+.stripes.khaki { background-image: url("images/stripes-olive.jpg?v=202610292040"); }
 
 /* ── Hero ──────────────────────────────────────────────────── */
-/* fills the first screen under the header, logo dead centre */
+/* stripes end ~70% down the screen so "The work" peeks in below; logo centred in the striped part */
 .hero {
+  --hero-h: max(320px, calc(70svh - var(--head, 84px)));
+  --hero-pad: 32px;
   display: grid; place-items: center;
-  height: calc(100svh - var(--head, 84px));
-  min-height: 360px;
+  height: var(--hero-h);
   overflow: hidden;
   /* extra top room so the logo centres in the part not covered by the awning */
-  padding: calc(48px + var(--awning)) var(--gutter) 48px;
+  padding: calc(var(--hero-pad) + var(--awning)) var(--gutter) var(--hero-pad);
 }
-.hero-mark { position: relative; width: min(420px, 72vw); }
+/* logo is as big as fits: at most 420px wide, and short enough to leave the padding */
+.hero-mark { position: relative; width: min(420px, 72vw, calc((var(--hero-h) - var(--awning) - 2 * var(--hero-pad)) * 1.25)); }
 .hero h1 { margin: 0; }
 .hero h1 img { width: 100%; height: auto; }
 
 
 /* ── Sections ──────────────────────────────────────────────── */
 .section { padding: clamp(64px, 9vw, 112px) var(--gutter); max-width: 1240px; margin: 0 auto; position: relative; }
+#work { padding-top: clamp(36px, 4vw, 52px); }
 .section-head { display: flex; align-items: end; justify-content: space-between; gap: 1rem 2rem; flex-wrap: wrap; margin-bottom: 2rem; }
 .section-head h2 { margin: 0; }
 .filters { display: flex; gap: .5rem; flex-wrap: wrap; }
@@ -171,7 +174,7 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.2rem); color: var(--red); }
 /* ── Custom orders: gingham + wavy frame ───────────────────── */
 .gingham {
   padding: clamp(64px, 9vw, 112px) var(--gutter);
-  background: var(--blue) url("images/gingham.jpg?v=202610292035") center / cover;
+  background: var(--blue) url("images/gingham.jpg?v=202610292040") center / cover;
   overflow: hidden;
 }
 .wavy {
@@ -289,7 +292,7 @@ dialog#lightbox::backdrop { background: rgba(46, 26, 16, .72); }
   .nav nav { gap: .3rem 1.1rem; width: 100%; flex-wrap: wrap; justify-content: center; }
   .nav { align-items: center; }
   .brand { font-size: 1.5rem; }
-  .hero { padding: calc(40px + var(--awning)) 16px 40px; }
+  .hero { --hero-pad: 28px; padding-left: 16px; padding-right: 16px; }
   .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.2rem .8rem; }
   .card .desc { display: none; }
   .card .row { flex-direction: column; align-items: stretch; gap: .5rem; }
