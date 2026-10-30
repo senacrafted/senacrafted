@@ -65,7 +65,7 @@ const WORKS = [
     buyLink: "https://www.etsy.com/listing/4503837941/illustrated-postcards-cozy-animals" },
   { title: "Adventure Awaits Postcard", category: "paper", price: 4.99, status: "available",
     photos: ["images/adventure-postcard-1.jpg", "images/adventure-postcard-2.jpg", "images/postcards-all.jpg"],
-    description: "Two friends loading boxes onto a little red car for a road trip under the palms.\n\nFor a cozy moment, a thoughtful moment, or during an adventure, these three postcards are a great way to reach out to friends, family, or anyone!\n\nA5 size 📄",
+    description: "On a road trip? What better way to let someone know than letting them in on the adventure! 🚗\n\nFor a cozy moment, a thoughtful moment, or during an adventure, these three postcards are a great way to reach out to friends, family, or anyone!\n\nA5 size 📄",
     buyLink: "https://www.etsy.com/listing/4503837941/illustrated-postcards-cozy-animals" },
   { title: "Stay Cozy Postcard", category: "paper", price: 4.99, status: "available",
     photos: ["images/cozy-postcard-full.jpg", "images/cozy-postcard-2.jpg", "images/postcards-all.jpg"],
