@@ -22,6 +22,7 @@ function placeholder(work) {
 
 function action(work) {
   if (work.status === "sold") return `<span class="muted" style="font-size:.85rem">Ask about similar</span>`;
+  if (work.status === "showcase") return `<span class="muted" style="font-size:.85rem">Showcase piece</span>`;
   if (work.buyLink) {
     const label = /etsy\.com/.test(work.buyLink) ? "Buy on Etsy" : "Buy now";
     return `<a class="btn small" href="${esc(work.buyLink)}" target="_blank" rel="noopener">${label}</a>`;

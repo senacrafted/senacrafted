@@ -10,7 +10,7 @@
 //               the full text shows when someone clicks the piece.
 //
 //  category: "leather" | "paper"
-//  status:   "available" | "sold" | "custom"   (custom = made to order)
+//  status:   "available" | "sold" | "custom" (made to order) | "showcase" (shown, not for sale)
 //  price:    a number (7.25), a range ([10, 18]), or null to hide the price
 //  buyLink:  paste the Etsy listing link to show a "Buy on Etsy" button.
 //            Leave "" and visitors get an "Ask about it" email button instead.
@@ -57,6 +57,10 @@ const WORKS = [
   { title: "Slim Leather Wallet", category: "leather", price: null, status: "available",
     photos: ["images/leather-wallet.jpg"],
     description: "Slim brown leather wallet, hand stitched, holds two cards at the front and a few in the middle flap.", buyLink: "" },
+
+  { title: "Handmade Stingray Leather Bag", category: "leather", price: null, status: "showcase",
+    photos: ["images/stingray-bag-1.jpg", "images/stingray-bag-2.jpg", "images/stingray-bag-3.jpg", "images/stingray-bag-4.jpg"],
+    description: "This was the first time I worked with an exotic type of leather, and I decided not to waste a single part and to showcase it in its full beauty! The process took quite a lot of effort to hand stitch and taught me a lot, but it was all worth the work!", buyLink: "" },
 
   // ── Paintings, prints & paper goods ──
   { title: "Weeping Willow Postcard", category: "paper", price: 4.99, status: "available",

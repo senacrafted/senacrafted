@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Sena Handwriting";
-  src: url("fonts/SenaHandwriting-Regular.ttf?v=20261030145822") format("truetype");
+  src: url("fonts/SenaHandwriting-Regular.ttf?v=20261030152123") format("truetype");
   font-display: swap;
 }
 
@@ -101,8 +101,8 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.2rem); color: var(--red); word-spacing: .25
 .btn.small { padding: .45rem .95rem; font-size: .85rem; }
 
 /* ── Sena's painted stripes ────────────────────────────────── */
-.stripes { background: var(--blue) url("images/stripes.jpg?v=20261030145822") center / cover; }
-.stripes.khaki { background-image: url("images/stripes-olive.jpg?v=20261030145822"); }
+.stripes { background: var(--blue) url("images/stripes.jpg?v=20261030152123") center / cover; }
+.stripes.khaki { background-image: url("images/stripes-olive.jpg?v=20261030152123"); }
 
 /* ── Hero ──────────────────────────────────────────────────── */
 /* stripes end ~70% down the screen so "The work" peeks in below; logo centred in the striped part */
@@ -179,7 +179,7 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.2rem); color: var(--red); word-spacing: .25
 /* ── Custom orders: gingham + wavy frame ───────────────────── */
 .gingham {
   padding: clamp(64px, 9vw, 112px) var(--gutter);
-  background: var(--blue) url("images/gingham.jpg?v=20261030145822") center / cover;
+  background: var(--blue) url("images/gingham.jpg?v=20261030152123") center / cover;
   overflow: hidden;
 }
 .wavy {
@@ -196,8 +196,10 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.2rem); color: var(--red); word-spacing: .25
 
 /* ── About ─────────────────────────────────────────────────── */
 .about { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: clamp(32px, 6vw, 80px); align-items: center; }
-.about-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.about-photos img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+/* Sena's photo big on the left, the two workbench shots stacked beside it */
+.about-photos { display: grid; grid-template-columns: 3fr 2fr; grid-template-rows: 1fr 1fr; gap: 12px; aspect-ratio: 5 / 4; }
+.about-photos img { width: 100%; height: 100%; object-fit: cover; }
+.about-photos .me { grid-row: 1 / span 2; }
 .about-text p { font-size: 1.12rem; max-width: 560px; }
 
 /* ── Events ────────────────────────────────────────────────── */
