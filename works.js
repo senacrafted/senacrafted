@@ -24,7 +24,7 @@ const SITE = {
   // each "..." is its own paragraph
   about: [
     "Ever since I was a kid, I've loved creating with my hands. Growing up in Turkey, I knew I wanted to pursue my passion for art, so I came to the USA and studied Computer Animation! It taught me the professional pipeline and digital art, and now I channel what I've learned into leatherworking, painting, and drawing.",
-    "My work draws on childhood memories, nature, and everyday life, so no two pieces are exactly alike. You'll find me at festivals and markets around Georgia — if you see me, come say hi, or reach out for a custom piece!",
+    "My work draws on childhood memories, nature, and everyday life, so no two pieces are exactly alike. You'll find me at festivals and markets around Georgia, and if you see me, come say hi, or reach out for a custom piece!",
   ],
   custom: "I'm open to custom orders, so please reach out if you're thinking of something specific! Whether it's something I've made before or something unique, I'd be more than happy to bring your vision to life.",
   hello: "Questions, comments, or just want to reach out? Shoot me a message!",

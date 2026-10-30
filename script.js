@@ -41,7 +41,9 @@ function priceTag(w) {
 }
 
 function renderGallery(filter = "all") {
-  const items = WORKS.map((w, i) => ({ ...w, i })).filter((w) => filter === "all" || w.category === filter);
+  const items = WORKS.map((w, i) => ({ ...w, i }))
+    .filter((w) => filter === "all" || w.category === filter)
+    .sort((a, b) => !!b.buyLink - !!a.buyLink);   // pieces with a Buy link come first
   $("#gallery").innerHTML = items.map((w) => {
     const photos = photosOf(w);
     const media = photos.length
@@ -174,7 +176,10 @@ $("#lightbox").addEventListener("keydown", (e) => {
 const setHead = () => document.documentElement.style.setProperty(
   "--head", `${($(".announce")?.offsetHeight || 0) + $(".nav").offsetHeight}px`);
 setHead();
-addEventListener("resize", setHead);
+document.fonts.ready.then(setHead);   // the header can grow a little once the fonts load
+const headWatch = new ResizeObserver(setHead);
+headWatch.observe($(".nav"));
+if ($(".announce")) headWatch.observe($(".announce"));
 
 const wavy = $(".wavy");
 wavy.insertAdjacentHTML("afterbegin", `<svg class="wave" aria-hidden="true"></svg>`);
