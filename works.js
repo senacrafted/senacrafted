@@ -20,7 +20,6 @@ const SITE = {
   email: "senacrafted@gmail.com",
   instagram: "senacrafted",           // without the @ — leave "" to hide the button
   tiktok: "senacrafted",              // without the @ — leave "" to hide the button
-  etsy: "https://www.etsy.com/shop/SenaCrafted",   // leave "" to hide the button
   location: "Georgia, USA",
   // each "..." is its own paragraph
   about: [

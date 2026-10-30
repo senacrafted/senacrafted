@@ -99,7 +99,7 @@ function renderEvents() {
         <div><strong>${esc(e.name)}</strong><div class="place">${esc(e.place)}</div></div>
         ${e.link ? `<a class="btn small ghost" href="${esc(e.link)}" target="_blank" rel="noopener">Details</a>` : ""}
       </li>`).join("")
-    : `<li class="empty"><span class="muted">Festival dates to be determined — follow along on Instagram or email me to hear first.</span></li>`;
+    : `<li class="empty"><span class="muted">Festival dates to be determined.</span></li>`;
 }
 
 // ── Wavy frame around the custom-orders box ──
@@ -137,8 +137,6 @@ if (SITE.instagram) $("#ig-link").href = `https://www.instagram.com/${SITE.insta
 else $("#ig-link").remove();
 if (SITE.tiktok) $("#tiktok-link").href = `https://www.tiktok.com/@${SITE.tiktok}`;
 else $("#tiktok-link").remove();
-if (SITE.etsy) $("#etsy-link").href = SITE.etsy;
-else $("#etsy-link").remove();
 $("#custom-btn").href = mailto(
   "Custom order request",
   "Hi! I'd love a custom piece.\n\nWhat I'm looking for:\nSize / colors:\nWhen I need it by:\n"
