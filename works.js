@@ -6,6 +6,9 @@
 //  show up when someone clicks the piece. Leave photos empty ([])
 //  to show a placeholder tile.
 //
+//  description: use \n\n between paragraphs. Cards show the first few lines;
+//               the full text shows when someone clicks the piece.
+//
 //  category: "leather" | "paper"
 //  status:   "available" | "sold" | "custom"   (custom = made to order)
 //  price:    a number (7.25), a range ([10, 18]), or null to hide the price
@@ -34,7 +37,7 @@ const WORKS = [
   // ── Leather ──
   { title: "Swan Leather Journal Cover — A5 Slim", category: "leather", price: 195, status: "available",
     photos: ["images/swan-cover-5.jpg", "images/swan-cover-1.jpg", "images/swan-cover-2.jpg", "images/swan-cover-3.jpg", "images/swan-cover-4.jpg"],
-    description: "Black leather journal cover with a hand-stitched, hand-painted pair of swans — one white, one black — and an elastic closure. The swan outlines show through on the inside.",
+    description: "One of a kind handmade swan leather journal cover made by me! The swans are hand painted and hand stitched to the cover of the journal and are meant to complement each other like yin and yang. 🦢🧵\n\nThis piece is for someone who wants to have a journal cover that’s unique, just like any ideas and thoughts it’ll hold inside. It was made with love and care, and hopefully it’ll go to someone who will take it on adventures and create, while being inspired by life!",
     buyLink: "https://www.etsy.com/listing/4490436039/hand-painted-swan-leather-journal-cover" },
   { title: "Crow Keychain Pouch", category: "leather", price: [10, 18], status: "available",
     photos: ["images/crow-keychain-1.jpg", "images/crow-keychain-2.jpg", "images/crow-keychain-3.jpg", "images/crow-keychain-4.jpg", "images/owl-keychain-1.jpg"],

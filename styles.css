@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Sena Handwriting";
-  src: url("fonts/SenaHandwriting-Regular.ttf?v=202610292053") format("truetype");
+  src: url("fonts/SenaHandwriting-Regular.ttf?v=202610301418") format("truetype");
   font-display: swap;
 }
 
@@ -101,8 +101,8 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.2rem); color: var(--red); word-spacing: .25
 .btn.small { padding: .45rem .95rem; font-size: .85rem; }
 
 /* ── Sena's painted stripes ────────────────────────────────── */
-.stripes { background: var(--blue) url("images/stripes.jpg?v=202610292053") center / cover; }
-.stripes.khaki { background-image: url("images/stripes-olive.jpg?v=202610292053"); }
+.stripes { background: var(--blue) url("images/stripes.jpg?v=202610301418") center / cover; }
+.stripes.khaki { background-image: url("images/stripes-olive.jpg?v=202610301418"); }
 
 /* ── Hero ──────────────────────────────────────────────────── */
 /* stripes end ~70% down the screen so "The work" peeks in below; logo centred in the striped part */
@@ -170,6 +170,8 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.2rem); color: var(--red); word-spacing: .25
 .card .info { padding: .9rem .2rem 0; display: flex; flex-direction: column; gap: .3rem; flex: 1; }
 .card h3 { font: 700 1.02rem/1.3 var(--sans); margin: 0; }
 .card .desc { color: var(--muted); font-size: .9rem; margin: 0; flex: 1; }
+/* long descriptions: first few lines on the card, full text in the photo viewer */
+.card .desc span { display: -webkit-box; -webkit-line-clamp: 4; line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
 .card .row { display: flex; align-items: center; justify-content: space-between; gap: .6rem; margin-top: .55rem; }
 .price { font-family: var(--hand); font-size: 1.6rem; line-height: 1; color: var(--red); }
 .card.is-sold .price { color: var(--muted); text-decoration: line-through; }
@@ -177,7 +179,7 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.2rem); color: var(--red); word-spacing: .25
 /* ── Custom orders: gingham + wavy frame ───────────────────── */
 .gingham {
   padding: clamp(64px, 9vw, 112px) var(--gutter);
-  background: var(--blue) url("images/gingham.jpg?v=202610292053") center / cover;
+  background: var(--blue) url("images/gingham.jpg?v=202610301418") center / cover;
   overflow: hidden;
 }
 .wavy {

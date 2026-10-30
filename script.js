@@ -6,6 +6,7 @@ const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "
 const money = (n) => "$" + (Number.isInteger(n) ? n : n.toFixed(2));
 // price can be a number or a [low, high] range
 const hasPrice = (w) => (Array.isArray(w.price) ? w.price.length === 2 : typeof w.price === "number" && w.price > 0);
+const paras = (text) => String(text ?? "").split(/\n\s*\n/).filter(Boolean);
 const priceText = (p) => (Array.isArray(p) ? `${money(p[0])}–${money(p[1])}` : money(p));
 
 const mailto = (subject, body = "") =>
@@ -56,7 +57,7 @@ function renderGallery(filter = "all") {
       <div class="media" data-i="${w.i}" role="button" tabindex="0" aria-label="See photos of ${esc(w.title)}">${media}${badge(w)}</div>
       <div class="info">
         <h3>${esc(w.title)}</h3>
-        <p class="desc">${esc(w.description)}</p>
+        <p class="desc"><span>${esc(paras(w.description)[0])}</span></p>
         <div class="row">${priceTag(w)}${action(w)}</div>
       </div>
     </article>`;
@@ -86,7 +87,7 @@ function openLightbox(i) {
     : "";
   box.querySelector(".lb-body").innerHTML = `
     <h3>${esc(w.title)}</h3>
-    <p class="muted">${esc(w.description)}</p>
+    ${paras(w.description).map((p) => `<p class="muted">${esc(p)}</p>`).join("")}
     ${w.status === "sold" ? `<span class="price">Sold</span>` : hasPrice(w) ? priceTag(w) : `<p></p>`}
     ${action(w)}`;
   showPhoto(0);
