@@ -30,7 +30,7 @@ const SITE = {
     "My work draws on childhood memories, nature, and everyday life, so no two pieces are exactly alike. You'll find me at festivals and markets around Georgia, and if you see me, come say hi, or reach out for a custom piece!",
   ],
   custom: "I'm open to custom orders, so please reach out if you're thinking of something specific! Whether it's something I've made before or something unique, I'd be more than happy to bring your vision to life.",
-  hello: "Questions, comments, or just want to reach out? Shoot me a message!",
+  hello: "Questions, comments, or just want to reach out?\nShoot me a message!",   // \n = new line
 };
 
 const WORKS = [
