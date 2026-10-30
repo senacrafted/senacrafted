@@ -88,7 +88,7 @@ const WORKS = [
     description: "Soft grey and blue monstera leaf shadows painted on a warm, textured canvas.\n\nOil on 18\" × 20\" canvas.", buyLink: "" },
   { title: "Monstera Shadow Painting — Muğla Rug Pattern", category: "paper", price: null, status: "available",
     photos: ["images/monstera-mugla-1.jpg", "images/monstera-mugla-2.jpg"],
-    description: "Deep blue monstera leaves painted over a traditional Turkish rug pattern from Muğla.", buyLink: "" },
+    description: "Deep blue monstera leaves painted over a traditional Turkish rug pattern from Muğla.\n\nOil on 24\" × 36\".", buyLink: "" },
   { title: "Into the Garden Sticker Sheet", category: "paper", price: null, status: "available",
     photos: ["images/sticker-sheet-2.jpg", "images/sticker-sheet-1.jpg", "images/animal-sticker-pack.jpg"],
     description: "A sticker pack of combined illustrations, featuring animals and nature.", buyLink: "" },

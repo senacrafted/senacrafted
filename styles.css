@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Sena Handwriting";
-  src: url("fonts/SenaHandwriting-Regular.ttf?v=20261030154545") format("truetype");
+  src: url("fonts/SenaHandwriting-Regular.ttf?v=20261030154715") format("truetype");
   font-display: swap;
 }
 
@@ -101,8 +101,8 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.2rem); color: var(--red); word-spacing: .25
 .btn.small { padding: .45rem .95rem; font-size: .85rem; }
 
 /* ── Sena's painted stripes ────────────────────────────────── */
-.stripes { background: var(--blue) url("images/stripes.jpg?v=20261030154545") center / cover; }
-.stripes.khaki { background-image: url("images/stripes-olive.jpg?v=20261030154545"); }
+.stripes { background: var(--blue) url("images/stripes.jpg?v=20261030154715") center / cover; }
+.stripes.khaki { background-image: url("images/stripes-olive.jpg?v=20261030154715"); }
 
 /* ── Hero ──────────────────────────────────────────────────── */
 /* stripes end ~70% down the screen so "The work" peeks in below; logo centred in the striped part */
@@ -179,7 +179,7 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.2rem); color: var(--red); word-spacing: .25
 /* ── Custom orders: gingham + wavy frame ───────────────────── */
 .gingham {
   padding: clamp(64px, 9vw, 112px) var(--gutter);
-  background: var(--blue) url("images/gingham.jpg?v=20261030154545") center / cover;
+  background: var(--blue) url("images/gingham.jpg?v=20261030154715") center / cover;
   overflow: hidden;
 }
 .wavy {
