@@ -81,7 +81,7 @@ const WORKS = [
     buyLink: "https://www.etsy.com/listing/4494730109/otters-otterly-in-love-wedding" },
   { title: "Into the Garden Sticker Sheet", category: "paper", price: null, status: "available",
     photos: ["images/sticker-sheet-2.jpg", "images/sticker-sheet-1.jpg", "images/animal-sticker-pack.jpg"],
-    description: "Cats, mice, a bunny, a busy ant, a weeping willow, and houseplants — illustrated stickers for planners and journals.", buyLink: "" },
+    description: "A sticker pack of combined illustrations, featuring animals and nature.", buyLink: "" },
 ];
 
 // Upcoming festivals & markets. Remove past ones as you go.
