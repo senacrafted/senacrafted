@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Sena Handwriting";
-  src: url("fonts/SenaHandwriting-Regular.ttf?v=202610292044") format("truetype");
+  src: url("fonts/SenaHandwriting-Regular.ttf?v=202610292053") format("truetype");
   font-display: swap;
 }
 
@@ -47,7 +47,7 @@ body::after {
 img { max-width: 100%; display: block; }
 a { color: inherit; }
 h1, h2, h3 { font-family: var(--hand); font-weight: 400; line-height: 1.1; margin: 0 0 .5em; }
-h2 { font-size: clamp(2.2rem, 5vw, 3.2rem); color: var(--red); }
+h2 { font-size: clamp(2.2rem, 5vw, 3.2rem); color: var(--red); word-spacing: .25em; }   /* the font's own space is narrow */
 .muted { color: var(--muted); }
 
 /* little hand-drawn asterisk — colour follows the text colour */
@@ -101,8 +101,8 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.2rem); color: var(--red); }
 .btn.small { padding: .45rem .95rem; font-size: .85rem; }
 
 /* ── Sena's painted stripes ────────────────────────────────── */
-.stripes { background: var(--blue) url("images/stripes.jpg?v=202610292044") center / cover; }
-.stripes.khaki { background-image: url("images/stripes-olive.jpg?v=202610292044"); }
+.stripes { background: var(--blue) url("images/stripes.jpg?v=202610292053") center / cover; }
+.stripes.khaki { background-image: url("images/stripes-olive.jpg?v=202610292053"); }
 
 /* ── Hero ──────────────────────────────────────────────────── */
 /* stripes end ~70% down the screen so "The work" peeks in below; logo centred in the striped part */
@@ -177,7 +177,7 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.2rem); color: var(--red); }
 /* ── Custom orders: gingham + wavy frame ───────────────────── */
 .gingham {
   padding: clamp(64px, 9vw, 112px) var(--gutter);
-  background: var(--blue) url("images/gingham.jpg?v=202610292044") center / cover;
+  background: var(--blue) url("images/gingham.jpg?v=202610292053") center / cover;
   overflow: hidden;
 }
 .wavy {
@@ -200,14 +200,16 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.2rem); color: var(--red); }
 
 /* ── Events ────────────────────────────────────────────────── */
 .events-section { padding-top: 0; }
-.events-section .car { width: clamp(150px, 18vw, 210px); position: static; margin-bottom: .4rem; }
-.events { list-style: none; padding: 0; margin: 1.8rem 0 0; display: grid; gap: 1rem; }
+.events-head { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.events-head h2 { margin: 0; }
+.events-head .car { width: clamp(84px, 11vw, 130px); flex-shrink: 0; }
+.events { list-style: none; padding: 0; margin: 1.2rem 0 0; display: grid; gap: 1rem; }
 .events li {
   display: grid; grid-template-columns: auto 1fr auto; gap: 1.2rem; align-items: center;
   background: var(--paper); border-radius: var(--radius);
   padding: 1rem 1.2rem;
 }
-.events li.empty { grid-template-columns: 1fr; }
+.events li.empty { grid-template-columns: 1fr; width: fit-content; }
 /* postage-stamp date */
 .events .date {
   --r: 5px;
