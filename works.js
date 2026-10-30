@@ -61,7 +61,7 @@ const WORKS = [
   // ── Paintings, prints & paper goods ──
   { title: "Weeping Willow Postcard", category: "paper", price: 4.99, status: "available",
     photos: ["images/willow-postcard-full.jpg", "images/willow-postcard-2.jpg"],
-    description: "A weeping willow with a single tear, framed like a postage stamp.\n\nFor a cozy moment, a thoughtful moment, or during an adventure, these three postcards are a great way to reach out to friends, family, or anyone!\n\nA5 size 📄",
+    description: "A somber willow postcard. For moments that feel emotionally heavy, this is the perfect postcard. 🍃\n\nFor a cozy moment, a thoughtful moment, or during an adventure, these three postcards are a great way to reach out to friends, family, or anyone!\n\nA5 size 📄",
     buyLink: "https://www.etsy.com/listing/4503837941/illustrated-postcards-cozy-animals" },
   { title: "Adventure Awaits Postcard", category: "paper", price: 4.99, status: "available",
     photos: ["images/adventure-postcard-1.jpg", "images/adventure-postcard-2.jpg", "images/postcards-all.jpg"],
