@@ -57,7 +57,7 @@ const WORKS = [
 
   // ── Paintings, prints & paper goods ──
   { title: "Weeping Willow Postcard", category: "paper", price: 4.99, status: "available",
-    photos: ["images/willow-postcard-1.jpg", "images/willow-postcard-2.jpg"],
+    photos: ["images/willow-postcard-full.jpg", "images/willow-postcard-2.jpg"],
     description: "“Why does the willow weep?” A stamp-style illustrated postcard.",
     buyLink: "https://www.etsy.com/listing/4503837941/illustrated-postcards-cozy-animals" },
   { title: "Adventure Awaits Postcard", category: "paper", price: 4.99, status: "available",
@@ -65,7 +65,7 @@ const WORKS = [
     description: "Two friends packing up the little red car for a road trip under the palm trees.",
     buyLink: "https://www.etsy.com/listing/4503837941/illustrated-postcards-cozy-animals" },
   { title: "Stay Cozy Postcard", category: "paper", price: 4.99, status: "available",
-    photos: ["images/cozy-postcard-1.jpg", "images/cozy-postcard-2.jpg", "images/postcards-all.jpg"],
+    photos: ["images/cozy-postcard-full.jpg", "images/cozy-postcard-2.jpg", "images/postcards-all.jpg"],
     description: "A frog wrapped in a blanket, toasting marshmallows by the campfire.",
     buyLink: "https://www.etsy.com/listing/4503837941/illustrated-postcards-cozy-animals" },
   { title: "Stronger Than You Think Card", category: "paper", price: 7.25, status: "available",
