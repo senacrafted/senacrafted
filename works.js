@@ -85,7 +85,7 @@ const WORKS = [
     buyLink: "https://www.etsy.com/listing/4494730109/otters-otterly-in-love-wedding" },
   { title: "Monstera Shadow Painting", category: "paper", price: null, status: "available",
     photos: ["images/monstera-shadow-1.jpg", "images/monstera-shadow-2.jpg"],
-    description: "Soft grey-blue monstera leaf shadows painted on a warm, textured canvas.", buyLink: "" },
+    description: "Soft grey and blue monstera leaf shadows painted on a warm, textured canvas.\n\nOil on 18\" × 20\" canvas.", buyLink: "" },
   { title: "Monstera Shadow Painting — Muğla Rug Pattern", category: "paper", price: null, status: "available",
     photos: ["images/monstera-mugla-1.jpg", "images/monstera-mugla-2.jpg"],
     description: "Deep blue monstera leaves painted over a traditional Turkish rug pattern from Muğla.", buyLink: "" },
