@@ -69,7 +69,7 @@ const WORKS = [
     buyLink: "https://www.etsy.com/listing/4503837941/illustrated-postcards-cozy-animals" },
   { title: "Stay Cozy Postcard", category: "paper", price: 4.99, status: "available",
     photos: ["images/cozy-postcard-full.jpg", "images/cozy-postcard-2.jpg", "images/postcards-all.jpg"],
-    description: "A frog wrapped in a blanket, toasting marshmallows over a campfire.\n\nFor a cozy moment, a thoughtful moment, or during an adventure, these three postcards are a great way to reach out to friends, family, or anyone!\n\nA5 size 📄",
+    description: "The best autumn, or autumn lover, postcard to send! A reminder to everyone to stay warm. 🐸\n\nFor a cozy moment, a thoughtful moment, or during an adventure, these three postcards are a great way to reach out to friends, family, or anyone!\n\nA5 size 📄",
     buyLink: "https://www.etsy.com/listing/4503837941/illustrated-postcards-cozy-animals" },
   { title: "Stronger Than You Think Card", category: "paper", price: 7.25, status: "available",
     photos: ["images/stronger-card-1.jpg", "images/stronger-card-2.jpg", "images/greeting-cards-1.jpg"],
