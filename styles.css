@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Sena Handwriting";
-  src: url("fonts/SenaHandwriting-Regular.ttf?v=202610292029") format("truetype");
+  src: url("fonts/SenaHandwriting-Regular.ttf?v=202610292032") format("truetype");
   font-display: swap;
 }
 
@@ -30,6 +30,8 @@
 html { scroll-behavior: smooth; scroll-padding-top: 150px; overflow-x: hidden; }
 /* never scroll sideways — clip anything that pokes past the edge (drawings, stars) */
 @supports (overflow-x: clip) { html { overflow-x: clip; } }
+/* no sideways rubber-band bounce from trackpad swipes */
+html, body { overscroll-behavior-x: none; }
 body {
   margin: 0;
   background: var(--cream);
@@ -99,8 +101,8 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.2rem); color: var(--red); }
 .btn.small { padding: .45rem .95rem; font-size: .85rem; }
 
 /* ── Sena's painted stripes ────────────────────────────────── */
-.stripes { background: var(--blue) url("images/stripes.jpg?v=202610292029") center / cover; }
-.stripes.khaki { background-image: url("images/stripes-olive.jpg?v=202610292029"); }
+.stripes { background: var(--blue) url("images/stripes.jpg?v=202610292032") center / cover; }
+.stripes.khaki { background-image: url("images/stripes-olive.jpg?v=202610292032"); }
 
 /* ── Hero ──────────────────────────────────────────────────── */
 /* fills the first screen under the header, logo dead centre */
@@ -169,7 +171,7 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.2rem); color: var(--red); }
 /* ── Custom orders: gingham + wavy frame ───────────────────── */
 .gingham {
   padding: clamp(64px, 9vw, 112px) var(--gutter);
-  background: var(--blue) url("images/gingham.jpg?v=202610292029") center / cover;
+  background: var(--blue) url("images/gingham.jpg?v=202610292032") center / cover;
   overflow: hidden;
 }
 .wavy {
