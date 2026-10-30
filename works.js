@@ -54,9 +54,9 @@ const WORKS = [
   { title: "Running Man Journal Cover — A6 Slim", category: "leather", price: null, status: "available",
     photos: ["images/running-man-cover-1.jpg"],
     description: "A custom A6 slim leather journal cover with the famous running man statue seen all around Sarasota, Florida! ☀️", buyLink: "" },
-  { title: "Leather Card Holder", category: "leather", price: null, status: "available",
+  { title: "Slim Leather Wallet", category: "leather", price: null, status: "available",
     photos: ["images/leather-wallet.jpg"],
-    description: "Slim brown leather card sleeve, hand-stitched — fits a few cards in your front pocket.", buyLink: "" },
+    description: "Slim brown leather wallet, hand stitched, holds two cards at the front and a few in the middle flap.", buyLink: "" },
 
   // ── Paintings, prints & paper goods ──
   { title: "Weeping Willow Postcard", category: "paper", price: 4.99, status: "available",
