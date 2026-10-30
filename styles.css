@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Sena Handwriting";
-  src: url("fonts/SenaHandwriting-Regular.ttf?v=202610292040") format("truetype");
+  src: url("fonts/SenaHandwriting-Regular.ttf?v=202610292044") format("truetype");
   font-display: swap;
 }
 
@@ -101,8 +101,8 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.2rem); color: var(--red); }
 .btn.small { padding: .45rem .95rem; font-size: .85rem; }
 
 /* ── Sena's painted stripes ────────────────────────────────── */
-.stripes { background: var(--blue) url("images/stripes.jpg?v=202610292040") center / cover; }
-.stripes.khaki { background-image: url("images/stripes-olive.jpg?v=202610292040"); }
+.stripes { background: var(--blue) url("images/stripes.jpg?v=202610292044") center / cover; }
+.stripes.khaki { background-image: url("images/stripes-olive.jpg?v=202610292044"); }
 
 /* ── Hero ──────────────────────────────────────────────────── */
 /* stripes end ~70% down the screen so "The work" peeks in below; logo centred in the striped part */
@@ -126,6 +126,9 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.2rem); color: var(--red); }
 #work { padding-top: clamp(36px, 4vw, 52px); }
 .section-head { display: flex; align-items: end; justify-content: space-between; gap: 1rem 2rem; flex-wrap: wrap; margin-bottom: 2rem; }
 .section-head h2 { margin: 0; }
+#work .section-head { justify-content: center; margin-bottom: 1.6rem; }
+/* readable by screen readers, invisible on screen */
+.visually-hidden { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .filters { display: flex; gap: .5rem; flex-wrap: wrap; }
 .filter {
   border: none; background: transparent; color: var(--red); box-shadow: inset 0 0 0 2px var(--red);
@@ -174,7 +177,7 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.2rem); color: var(--red); }
 /* ── Custom orders: gingham + wavy frame ───────────────────── */
 .gingham {
   padding: clamp(64px, 9vw, 112px) var(--gutter);
-  background: var(--blue) url("images/gingham.jpg?v=202610292040") center / cover;
+  background: var(--blue) url("images/gingham.jpg?v=202610292044") center / cover;
   overflow: hidden;
 }
 .wavy {
