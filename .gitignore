@@ -1,1 +1,5 @@
 .DS_Store
+# local secrets (Bluehost SSH key)
+.ssh/
+# build artifacts, rebuilt from theme/ and plugin/ sources
+*.zip

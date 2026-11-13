@@ -1,0 +1,29 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "settings": {
+    "appearanceTools": false,
+    "layout": { "contentSize": "760px", "wideSize": "1240px" },
+    "color": {
+      "defaultPalette": false,
+      "defaultGradients": false,
+      "palette": [
+        { "slug": "cream", "color": "#fbeece", "name": "Cream" },
+        { "slug": "paper", "color": "#fdf4dc", "name": "Paper" },
+        { "slug": "ink", "color": "#4a2a1a", "name": "Chocolate" },
+        { "slug": "muted", "color": "#7b6150", "name": "Muted" },
+        { "slug": "red", "color": "#b9361f", "name": "Tomato" },
+        { "slug": "blue", "color": "#b7d2dc", "name": "Powder blue" },
+        { "slug": "olive", "color": "#a99c6c", "name": "Khaki" },
+        { "slug": "honey", "color": "#f1c166", "name": "Honey" }
+      ]
+    },
+    "typography": {
+      "defaultFontSizes": false,
+      "fontFamilies": [
+        { "slug": "sans", "name": "Figtree", "fontFamily": "\"Figtree\", system-ui, sans-serif" },
+        { "slug": "hand", "name": "Sena Handwriting", "fontFamily": "\"Sena Handwriting\", \"Figtree\", system-ui, sans-serif" }
+      ]
+    }
+  }
+}
